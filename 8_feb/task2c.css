@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(222, 241, 235);
+}
+img{
+    width: 350px;
+    height: 250px;
+    margin-left: 80px;
+}
+.frontend{
+    background-color: rgb(224, 252, 246);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: medium;
+    margin: 5px;
+    align-items: center;
+}
+.backend{
+    background-color: rgb(224, 252, 246);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: medium;
+    margin: 5px;
+    align-items: center;
+}
