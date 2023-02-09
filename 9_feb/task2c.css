@@ -1,0 +1,127 @@
+/* for big screen  */
+.thegrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 0px;
+    border: 1px solid black;
+
+}
+
+/* for small screen  */
+@media screen and (max-width:768px) {
+    .thegrid {
+        grid-template-columns: auto auto auto auto;
+    }
+
+}
+
+
+
+/* --------------table 1 ------------ */
+
+.cell {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+.head {
+    border: 1px solid black;
+    padding: 7px 80px;
+    padding-left: 3px;
+    background-color: rgb(227, 226, 228);
+    text-align: left;
+
+}
+
+.head1 {
+
+    padding: 7px 80px;
+    padding-left: 3px;
+    background-color: rgb(227, 226, 228);
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+
+
+/* ----------table 2---------- */
+
+.head2 {
+    padding-right: 80px;
+    padding-left: 10px;
+    padding-top: 0px;
+    background-color: rgb(227, 226, 228);
+    text-align: left;
+    border-bottom: 1px solid black;
+    text-align: center;
+    justify-content: center;
+}
+
+.head3 {
+    padding-right: 80px;
+    padding-left: 10px;
+    padding-top: 20px;
+    background-color: rgb(227, 226, 228);
+    text-align: left;
+    border-bottom: 0px solid rgb(227, 226, 228);
+    border-top: 1px solid black;
+    text-align: center;
+    justify-content: center;
+
+}
+
+
+
+/* -----------table 3 ---------- */
+
+.head4 {
+    /* padding: 10px 80px;
+    padding-left: 10px; */
+    background-color: rgb(227, 226, 228);
+    text-align: left;
+
+    border-top: 1px solid black;
+
+    border-bottom: 1px solid black;
+    border-left: 0px;
+    border-right: 0px;
+
+}
+
+.head5 {
+    border-color: white;
+}
+
+.cell1 {
+    padding-left: 15px;
+    border: none;
+    font-size: 15px;
+}
+
+.cell2 {
+    font-size: 15px;
+    padding-left: 15px;
+    border-left: 2px solid black;
+}
+
+.head7 {
+    border-right: none;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: rgb(227, 226, 228);
+}
+
+.head8 {
+    /* border-right: none;
+    padding: 7px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: rgb(227, 226, 228); */
+    background-color: rgb(227, 226, 228); 
+    border-bottom: 1px solid black;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}

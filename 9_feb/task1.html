@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task1c.css">
+    <title>Tables</title>
+</head>
+
+<body>
+    <h2>Tables in html</h2>
+
+
+    <!-- ----------------table 1 in html ---------- -->
+
+    <div id="table1">
+        <table>
+            <caption>Invoice</caption>
+            <tr>
+                <th>Item/Desc.</th>
+                <th>Qty.</th>
+                <th>@</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Paperclips (Box)</td>
+                <td>100</td>
+                <td>1.15</td>
+                <td>115.00</td>
+            </tr>
+            <tr>
+                <td>Wastepaper Baskets</td>
+                <td>2</td>
+                <td>17.99</td>
+                <td>35.98</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="table1"><b>Subtotal</b></td>
+                <td>610.88</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="table1"><b>Tax</b></td>
+                <td>7%</td>
+                <td>42.76</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="table1"><b>Total</b></td>
+                <td>653.64</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <!-- ----------------table 2 in html ---------- -->
+    <div id="table2">
+        <table>
+            <caption>Favorite and Least Favoriete Things</caption>
+            <tr>
+                <th></th>
+                <th></th>
+                <th><b>Bob</b></th>
+                <th><b>Alice</b></th>
+            </tr>
+
+            <tr>
+                <td rowspan="2" class="color"><b>Favorite</b></td>
+                <td class="color"><b>Color</b></td>
+                <td>Blue</td>
+                <td>Purple</td>
+            </tr>
+            <tr>
+                <td class="color"><b>Flavour</b></td>
+                <td>Banana</td>
+                <td>Chocolate</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="color"><b>Least Favorite</b></td>
+                <td class="color"><b>Color</b></td>
+                <td>Yellow</td>
+                <td>Pink</td>
+            </tr>
+            <tr>
+                <td class="color"><b>Flavour</b></td>
+                <td>Mint</td>
+                <td>Walnut</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- ------------table 3 in html ----------- -->
+    <div id="table3">
+
+        <table>
+            <tr>
+                <th colspan="3"><b>Invoice#123456789</b></th>
+                <th><b>14 January 2025</b></th>
+            </tr>
+            <tr>
+                <td colspan="2" class="dec">
+                    <pre><b>Pay to:</b>
+                            Acme Billing Co.
+                            123 Main St.
+                            Cityville, NA 12345</pre>
+                </td>
+                <td colspan="2" class="dec">
+                    <pre><b>Customer:</b>
+                                John Smith 
+                                321 Willow Way
+                                Southeast Northwestershire, MA 54321</pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Name/Description</th>
+                <th>Qty.</th>
+                <th>@</th>
+                <th>Cost</th>
+            </tr>
+            <tr>
+                <td>Paperclips</td>
+                <td>1000</td>
+                <td>0.01</td>
+                <td>10.00</td>
+
+            </tr>
+            <tr>
+                <td>Staples(box)</td>
+                <td>100</td>
+                <td>1.00</td>
+                <td>100.00</td>
+            </tr>
+            <tr>
+                <th colspan="3">Subtotal</th>
+                <td>110.00</td>
+            </tr>
+            <tr>
+                <th colspan="2">Tax</th>
+                <td>8%</td>
+                <td>8.80</td>
+
+            </tr>
+            <tr>
+                <th colspan="3">Grand Total</th>
+                <td>$ 118.80</td>
+
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
