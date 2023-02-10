@@ -1,0 +1,40 @@
+body,h1,ul,li{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(94, 90, 90);
+    font-family: Arial, Helvetica, sans-serif;
+}
+section{
+     width: 85%;
+     margin: 50px auto;
+}
+section h1{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 2px rgba(22, 22, 22, 9);
+    color: white;
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom:10px ;
+    box-sizing: border-box;
+}
+ul li{
+    list-style: none;
+    background-color: rgb(61, 60, 60);
+    color: white;
+    padding: 5px 10px;
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+ul li.active{
+    background-color: rgba(39, 224, 39, 0.486);
+}

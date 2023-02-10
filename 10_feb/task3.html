@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task3c.css">
+    <title>Registration form</title>
+
+    <script >
+        function showmessage() {
+                    //    get value of all the elements 
+                    var strText = document.getElementById("fname").value;          
+                    var strText1 = document.getElementById("age").value;
+
+
+
+                    function displaygender(){
+                        var gen = document.getElementsByName('gender');
+                        for(i=0;i<gen.length;i++){
+                            if(gen[i].checked){
+                                return gen[i].value;
+                            }
+                        }
+                    }
+                    var strText2=displaygender();
+
+
+
+                    var strText3 = document.getElementById("add").value;
+                    var strText4 = document.getElementById("custno").value;
+
+
+
+                    var allsub=[];
+                    function displaysubs(){
+                        var subs= document.getElementsByName("subjects");
+                        for(i=0;i<subs.length;i++){
+                        if(subs[i].checked){
+                            allsub.push(subs[i].value);
+                        }
+                    }
+                      return allsub;
+                    }
+                    var strText5=displaysubs();
+
+        //    displaying all the elements 
+                    display_message.innerHTML='Name:  ' +strText + ' ' +'Age:  ' + strText1 + ' '+ 'Gender:'+ strText2 +'Address:'+ strText3 + ' ' +'Contact No.:'+ strText4+' '+ 'Subjects:' + strText5;
+                }
+                </script>
+
+
+
+    
+</head>
+<body>
+    
+    <form id="fform">
+        <fieldset>
+            <legend>Student Registration Form</legend>
+            <!-- take input of name  -->
+            <label for="fname">Enter Your Name:</label>
+            <input type="text"  id="fname" name="fname" placeholder="Enter name" required>
+            <br>
+            <br>
+            <br>
+
+            <!-- take input of age  -->
+        <label for="age">Age:</label>
+        <input type="number"  id="age" name="age" pattern="[0-9]{1-2}" required>
+        <br>
+        <br>
+        <br>
+
+         <!-- take input of gender  -->
+         <label for="gender" >Gender:</label>&emsp;&emsp;
+         <input type="radio" id="female" name="gender" value="female" >
+         <label>Female</label>&emsp;&emsp;
+         <input type="radio"  id="male" name="gender" value="male">
+         <label>Male</label>&emsp;&emsp;
+         <input type="radio"  id="others" name="gender" value="others" >
+         <label>Others</label>
+         <br>
+         <br>
+         <br>
+
+         <!-- take input of address  -->
+         <label for="add">Enter Your Address:</label>
+         <input type="text"  id="add" name="add" placeholder="Enter address"required>
+         <br>
+         <br>
+         <br>
+
+         <label for="custno">Enter your Contact Number:</label>
+         <input type="tel" name="custno" id="custno" placeholder="+91" maxlength="10" pattern="[0-9]{10}"size="10" required><br><br>
+        
+
+        <label for="subjects">Enter Subjects to Enroll:</label> <br>
+        <input type="checkbox" id="math" name="subjects" value="Maths">
+        <label>Maths</label><br>
+
+        <input type="checkbox" id="english" name="subjects" value="English">
+        <label>English</label><br>
+
+        <input type="checkbox" id="hindi" name="subjects" value="Hindi">
+        <label>Hindi</label><br>
+
+        <input type="checkbox" id="physics" name="subjects" value="Physics">
+        <label>Physics</label><br>
+
+        <input type="checkbox" id="biology" name="subjects" value="Biology">
+        <label>Biology</label><br>
+
+        <input type="checkbox" id="chemistry" name="subjects" value="Chemistry">
+        <label>Chemistry</label><br>
+
+        <input type="checkbox" id="civics" name="subjects" value="Civics">
+        <label>Civics</label><br>
+
+        <input type="checkbox" id="history" name="subjects" value="History">
+        <label>History</label><br>
+
+        <input type="checkbox" id="economics" name="subjects" value="Economics">
+        <label>Economics</label><br>
+
+        <input type="checkbox" id="geography" name="subjects" value="Geography">
+        <label>Geography</label><br><br>
+
+        <input type="button" onclick="showmessage()" value="Submit">
+        <p>Input: <p id="display_message"><br><br></p>
+        </p>
+        </fieldset>
+        
+    
+    </form>
+
+
+
+</body>
+</html>

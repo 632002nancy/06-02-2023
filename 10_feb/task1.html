@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task1c.css">
+    <script >
+function showmessage() {
+            //    get value of all the elements 
+            var strText = document.getElementById("fname").value;          
+            var strText1 = document.getElementById("lname").value;
+            var strText2 = document.getElementById("age").value;
+            function displaygender(){
+                var gen = document.getElementsByName('gender');
+                for(i=0;i<gen.length;i++){
+                    if(gen[i].checked){
+                        return gen[i].value;
+                    }
+                }
+            }
+            var strText3=displaygender();
+//    displaying all the elements 
+            display_message.innerHTML='First Name:  ' +strText + ' ' +'Last Name:  ' + strText1 + ' ' + '        Age:' + strText2 + ' ' + 'Gender:'+ strText3;
+        }
+        </script>
+</head>
+<body>
+    <h3>Html Form</h3>
+    <form id="fform" >
+
+        <!-- take input of first name  -->
+        <label for="fname">First Name:</label>
+        <input type="text"  id="fname" name="fname" placeholder="Enter first name">
+        <br>
+        <br>
+        <br>
+
+
+ <!-- take input of last name  -->
+        <label for="lname">Last Name:</label>
+        <input type="text"  id="lname" name="lname" placeholder="Enter Last name">
+        <br>
+        <br>
+        
+        <!-- take input of age  -->
+        <label for="age">Age:</label>
+        <input type="number"  id="age" name="age" min="1" max="100">
+        <br>
+        <br>
+        <br>
+
+        <!-- take input of gender  -->
+        <label for="gender" >Gender:</label>&emsp;&emsp;
+        <input type="radio" id="female" name="gender" value="female" >
+        <label>Female</label>&emsp;&emsp;
+        <input type="radio"  id="male" name="gender" value="male">
+        <label>Male</label>&emsp;&emsp;
+        <input type="radio"  id="others" name="gender" value="others" >
+        <label>Others</label>
+        <br>
+        <br>
+        <br>
+
+        <input type="button" onclick="showmessage()" value="Submit">
+        <p>Input: <p id="display_message"><br><br></p>
+        </p>
+           </form>
+
+
+</body>
+</html>

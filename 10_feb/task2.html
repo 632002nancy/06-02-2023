@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task2c.css">
+    <title>Attributes of form</title>
+</head>
+<body>
+    <h3>Demonstration of different tags in form:</h3>
+    <form id="fform">
+        <fieldset>
+
+            <legend>Chinese Food Menu</legend>
+            <label for="custname">Enter your Name:</label>
+            <input type="text" name="custname" id="custname"><br><br>
+
+            <label for="custno">Enter your Contact Number:</label>
+            <input type="tel" name="custno" id="custno" placeholder="+91"><br><br>
+
+
+            <label for="cfood">Select your Favorite Chinese Food:</label>
+            <select name="cfood" id="cfood">
+                <optgroup label="Noodles">
+                    <option value="Hakka Noodles">Hakka Noodles</option>
+                    <option value="Garlic Noodles">Garlic Noodles</option>
+                    <option value="Schezwan Noodles">Schezwan Noodles</option>
+                </optgroup>
+                <optgroup label="Momos">
+                    <option value="Veg. momos">Veg. momos</option>
+                    <option value="Non-Veg. momos">Non-Veg. momos</option>
+                    <option value="Paneer momos">Paneer momos</option>
+                </optgroup>
+                <optgroup label="chilli potato">
+                    <option value="Honey Chilli Potato">Honey Chilli Potato</option>
+                    <option value="Garlic Chilli Potato">Garlic Chilli Potato</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+        </fieldset>
+
+    </form>
+</body>
+</html>
