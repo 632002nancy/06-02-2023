@@ -25,6 +25,7 @@ ul{
     border-bottom: 2px solid black;
     padding-bottom:10px ;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 ul li{
     list-style: none;
@@ -37,4 +38,18 @@ ul li{
 }
 ul li.active{
     background-color: rgba(39, 224, 39, 0.486);
+}
+
+.product{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product img{
+    width: 200px;
+    height: 180px;
+    margin-bottom: 10px;
 }
