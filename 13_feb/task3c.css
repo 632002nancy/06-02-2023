@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(203, 245, 245);
+    display: flex;
+    
+}
+
+
+/* CSS implementation using external css  */
+.external{
+    display: flex;
+    background-color: rgb(167, 199, 188);
+    flex-direction: column;
+    width: 25%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 2px 5px;
+    box-shadow: 0px -10px 21px 10px rgb(164 164 243);
+}

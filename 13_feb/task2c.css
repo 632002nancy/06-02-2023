@@ -1,0 +1,21 @@
+body{
+    background-color: antiquewhite;
+    
+}
+ .block1{
+    display: flex;
+    /* flex-direction: column; */
+     width: 40%;
+     margin: auto;
+     justify-content: center;
+     align-items: center;
+ }
+
+h5,p,h4{           /*selector grouping here we select different elements seperated by comma and apply same css to all */
+
+    background-color: burlywood;
+    margin: 10px 1px;
+    padding: 5px;
+
+
+}

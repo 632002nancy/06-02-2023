@@ -1,0 +1,149 @@
+body{
+    background-color: rgb(243, 234, 245);
+}
+/* ----------------navbar------------------ */
+#navbar{
+    display: flex;
+    align-items: center;                  /*vertical adjustment */
+    justify-content: center;              /* horizontal adjustment*/
+   position:relative;
+}
+#navbar ul{
+    display: flex;
+
+}
+#navbar ul li{
+    list-style-type: none;
+    margin: 0px 40px;
+    background-color: rgb(224, 195, 243);
+    padding: 8px;
+    border: 1px solid rgb(145, 6, 238);
+    border-radius: 20px
+}
+#navbar ul li a{
+    text-decoration: none;
+    color: rgb(56, 16, 238);              /* text color is changed to black*/
+    
+}
+
+
+/* ---------------------------------hover effect in navbar ------------------------------- */
+#navbar ul li:hover{
+    text-decoration:underline;
+    background-color: rgb(247, 166, 166);
+}
+#navbar ul li a:hover{
+    color: rgb(219, 46, 162);              /* text color is changed to pink whenever we hover*/
+
+} 
+/* the moment when link is clicked active: effect in navbar  */
+#navbar ul li:active{
+    text-decoration:underline;
+    background-color: rgb(209, 247, 166);
+}
+#navbar ul li a:active{
+    color: rgb(9, 73, 14);              /* text color is changed to green whenever we click*/
+
+} 
+/* when link is visited  */
+#navbar ul li:visited{
+    text-decoration:underline;
+    background-color: rgb(74, 155, 192);
+}
+#navbar ul li a:visited{
+    color: rgb(4, 48, 88);              /* text color is changed to blue when the link has been visited*/
+
+} 
+
+/* ---------------image section along with heading--------------  */
+#img_computer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+#img_computer img{
+    width: 300px;
+    height: 200px;
+    box-shadow: 0px 0 30px 0px rgb(247 132 66);
+}
+#img_computer h1{
+    text-decoration: underline 1.5px;
+    color: rgb(73, 4, 138);
+}
+
+
+/* ----------------------------list style in computer--------------------------- */
+#computer{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  margin: auto;
+  padding-top: 0%;
+  height: 60%;
+  margin-top: 30px;
+  background-color: rgb(231, 210, 252);
+  box-shadow: 0px 0px 20px 3px purple;
+}
+
+#computer h2{
+    margin-bottom: 20px;
+    color: rgb(47, 3, 88);
+}
+#computer ul {
+    
+    margin-top: 0px;
+    list-style-image: url('https://webdocs.cs.ualberta.ca/~aixplore/learning/DecisionTrees/InterArticle/graphics/small-computer.gif'); /*takes image as the marker for the list*/
+     
+}
+
+#computer ul li{
+   
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-style: bold;
+    font-size: 1.8rem;
+
+}
+
+/*------------------ table styling ------------------- */
+.table1{
+    display: flex;
+    flex-direction: column;
+   width: 60%;
+   margin: auto;
+    margin-top: 20px;
+    border: 2px solid rgb(230, 130, 147);
+    box-shadow: 0px 0px 10px 6px rgb(241, 174, 211);
+}
+th{
+    border-bottom:1px solid black;
+}
+td{
+    border-bottom:1px solid grey;
+}
+tr:nth-child(odd) {background-color: #e9c0c0;}            /* color of every odd child will change*/
+tr:hover {background-color: coral;}           /* background of the row will change when the mouse move over it */
+
+/* -----------------------icons ------------------------ */
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 4px 5px grey;
+}
+.icons i{
+    padding: 8px;
+}
+
+

@@ -1,0 +1,38 @@
+/* ----------------universal selector---------- */
+/* universal selector will do the css on whole web page  */
+*{
+    
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* to do css on the body of the web page  */
+body{
+    background-color: rgb(117, 175, 177);
+    display:flex;
+}
+
+/* -------------class tag ------------ */
+/* css inside the class will be reflected to all the elements containing box class  */
+.box{         /*all the div containing box class will be modified by following css */ 
+    text-align: center;
+    justify-content: center;
+    width: 20%;
+    margin: auto;
+}
+
+/*----------------- id tag ------------------- */
+/* only one element can be modified using id tag as it is unique  */
+#idtag{
+    background-color: aquamarine;
+}
+#class1
+{
+    background-color: rgb(59, 175, 139);
+}
+#class2
+{
+    background-color: rgb(52, 168, 131);
+}
+
+
+
