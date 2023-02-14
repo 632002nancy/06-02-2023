@@ -1,0 +1,83 @@
+body{
+    
+    background-color: rgb(51, 50, 50);
+}
+
+/* ----------------------------------------styling welcome class------------------------------------------ */
+.welcome{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.welcome ul {
+    display: flex;
+}
+.welcome ul li{
+list-style-type: none;
+margin: 5px 50px;
+background-color: rgb(109, 108, 108);
+padding: 20px;
+border-radius: 2px;
+cursor: pointer;
+}
+.welcome ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* ---------------------------------------anchor pseudo class----------------------------------------- */
+/* when the link has been already visited  */
+.welcome ul li a:visited{
+    background-color: rgb(9, 215, 223);
+    color: rgb(209, 190, 228);
+}
+
+/* when we move mouse over the list  */
+.welcome ul li:hover{
+background-color: cadetblue;
+}
+/* when we move mouse over the link  */
+.welcome ul li a:hover{
+  
+    color: rgb(209, 190, 228);
+}
+
+/* when we click and the link is active  */
+.welcome ul li:active{
+background-color: rgb(105, 173, 131);
+}
+.welcome ul li a:active{
+  
+    color: rgb(233, 155, 81);
+}
+
+/*------------------------------------------------------ pseudo elements---------------------------------- */
+.pelements{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px ;
+   
+}
+/* it will increase the size of first line of paragraph  */
+p::first-line{
+       font-size: 22px;
+}
+/* increase the size change the color of first letter of the paragraph  */
+p::first-letter{
+       font-size: 40px;
+       color: blanchedalmond;
+}
+/* when we select any portion it will change its color to red and background to yellow  */
+::selection {
+    color: red;
+    background: yellow;
+  }

@@ -1,0 +1,201 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(136, 165, 136);
+}
+
+
+/* -------------------------navigation bar------------------------ */
+#navbar{
+    
+   width: 110%;                
+   background-color: rgb(178, 202, 178);
+   margin-left: -8px; /* to get the light portion throughout the body*/
+   margin-right: -8px;
+   position:fixed;
+}
+#navbar ul{
+    display: flex;
+    margin: 10px;
+    list-style-type: none;
+}
+#navbar ul li{
+    padding: 20px;
+}
+#navbar ul li a{
+    color: rgb(250, 241, 241);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#navbar ul li:hover{
+    background-color: rgb(134, 163, 134);
+    border-radius: 8px;
+}
+a:focus{
+    background-color: green;
+    color: black;
+}
+a:currentpage{
+    background-color: green;
+    color: black;
+}
+
+
+/* ------------------------------------home section ---------------------------------------- */
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:white;
+    padding: 100px 20px;
+}
+#home h1{
+   font-size: 60px;
+   text-shadow:8px 8px 8px grey;
+}
+#travel {
+    padding: 1px;
+    color: rgb(237, 250, 235);
+    font-size: larger;
+}
+/* -------------------------------------about us -------------------------------------------- */
+#about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    color: rgb(220, 243, 209);
+    font-size: 20px;
+    background-color: rgb(100, 126, 105);
+    padding: 25px;
+    border-radius: 30px;
+}
+#about h4{
+    text-shadow:8px 8px 8px grey;
+  font-size: 50px;
+  color: rgb(220, 243, 209);
+  
+    margin: 10px;
+    padding: 10px;
+}
+#about h5{
+    padding: 0px;
+    margin: 0px;
+    font-size: 25px;
+  color: rgb(220, 243, 209);
+}
+
+
+
+/* --------------------------------------------contact us ------------------------------------------------------- */
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(90, 139, 105);
+    width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    border-radius: 40px;
+    color: rgb(199, 247, 210);
+}
+#contact h4{
+    font-size: 40px;
+}
+#contact i{
+    padding: 10px;
+    margin: 10px;
+}
+#contact i:hover{
+font-size: x-large;
+}
+#contact a{
+    padding: 0px 4px;
+}
+
+
+
+
+/* ---------------------------------------------------------------image css from previous task------------------------------------------------------------------------------ */
+.imgs{
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+}
+/* division of different images with their context  */
+.image{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 15px;
+    background-color: rgb(200, 245, 207);
+    padding: 8px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    box-shadow: 0px 0px 25px 1px black;
+    width: 13%;
+  
+}
+.image img {
+    width: 150px;
+    height: 200px;
+    box-shadow: 0px 0px 3px 1px grey;
+}
+.image p{
+    margin-top: 0px;
+    margin-bottom:35px ;
+    color: black;
+}
+.image h4{
+    color: black;
+}
+
+.image button{
+    background-color: rgb(136, 133, 133);
+    color: white;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-top: 0px;
+    border: 0.5px solid rgb(92, 91, 91);
+    border-radius: 30px;
+    box-shadow: 0px 0px 3px 1px grey;
+    padding: 4px 40px;
+}
+
+/* -----hovering effect---- */
+.image button:hover{
+    background-color: black;
+    text-decoration: underline;
+}
+.image:hover{
+    padding: 25px;
+}
+
+.image img:hover{
+    width: 200px;
+    height: 250px;
+}
+
+
+
+/* ---------------------------------responsiveness---------------------------------------  */
+@media screen and (max-width: 800px) {
+.nav1 , .about1 , .home1 , .icon , .image{
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      
+    }
+    .imgs{
+        flex-direction: column;
+        width: 50%;
+    }
+    
+
+  }
