@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(236, 236, 247);
+}
+/* -------------------------------------navbar--------------------------------------- */
+.clr {
+ color: white;
+}
+
+
+
+/* -----------------------------------left side division---------------------------- */
+.title{
+    background-color: black;
+    color: white;
+    width: 90px;
+    margin-top: -8px;
+    
+}
+
+
+
+
+.btn{
+    color: white;             /*color of text inside button*/
+}
+
+
+
+/* -----------------------------------------------footer----------------------------------- */

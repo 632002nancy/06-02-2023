@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- These style ans script tag are used to include bootstrap functionalities inside of our html file  -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <!-- defer attribute is set, it specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3c4ed1247d.js" crossorigin="anonymous"></script>
+    <title>Bootstrap</title>
+</head>
+
+<body>
+
+    <!------------- -------------------------------button---------------------------------------  -->
+    <div class="container btn-group d-flex justify-content-center">
+        <div class="btn-group d-flex w-15% justify-content-center mt-3">      <!-- btn-group make 2 button adjacent to each other-->
+            <a href="#" class="btn btn-primary "><i class="fa-solid fa-plus m-1"></i>New User</a>
+            <a href="#" class="btn btn-danger"><i class="fa-solid fa-user m-1"></i>I have a account</a>
+        </div>
+    </div>
+
+    <p class="text-center mt-3 mb-5">Click to select</p>
+
+    <!-- ----------------------------form-------------------------- -->
+    <div class="container d-flex flex-column w-25 ">
+
+        <div class="row mt-2 ">
+            <div class="input-group ">          <!--input group can take 2 inputs in one label-->
+                <input type="email" class="form-control" value="Email Address">
+                <div class="input-group-text"><i class="fa-solid fa-envelope"></i></div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="input-group">
+                <input type="email" class="form-control" value="Password">                  <!--form-control to implement bootstrap into input area-->
+                <div class="input-group-text"><i class="fa-solid fa-pen"></i></div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="input-group">
+                <input type="email" class="form-control" value="Confirm Password">
+                <div class="input-group-text"><i class="fa-solid fa-key"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------payment------------------------------------  -->
+    <div class="container gap-3 d-flex justify-content-center align-items-center mt-5">
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link text-dark" aria-current="page" href="#"><b>Pay With:</b></a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link active" aria-current="page" href="#"><i
+                        class="fa-solid fa-dollar-sign"></i>Paypal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-bitcoin-sign"></i>Bitcoin</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- -----------------------------lower part-------------------------  -->
+    <div class="container d-flex  flex-column justify-content-center align-items-center mt-4">
+
+        <!-- rates  -->
+        <div class="row">
+            <p><i class="fa-light fa-dollar-sign"></i> <b>99' <sup>99</sup>/mo with </b><i
+                    class="fa-solid fa-dollar-sign"></i> </p>
+        </div>
+
+        <!-- what is paypal  -->
+        <div class="row">
+            <a class="text-decoration-none" href="https://paypal.com" target="_blank">What is PayPal?</a>
+        </div>
+
+
+        <!-- for button  -->
+        <div class="row">
+            <button type="button" class="btn btn-primary mt-3">PAY <i
+                    class="fa-light fa-dollar-sign"></i>9'<sup>99</sup> USD WITH PAYPAL</button>
+        </div>
+    </div>
+</body>
+
+</html>
