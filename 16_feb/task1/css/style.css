@@ -1,0 +1,95 @@
+/*variable with color olive*/
+body {
+  background: url(https://wallpaperaccess.com/full/3257345.jpg) no-repeat center center / cover;
+  /*gave that color to background color of the body*/
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.4px;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #444440;
+  margin: 4px -8px;
+  padding: 6px;
+}
+@media screen and (max-width: 800px) {
+  #menu ul {
+    display: block;
+  }
+}
+#menu ul li {
+  padding: 8px 45px;
+}
+#menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+}
+#menu ul li:hover {
+  background-color: #9e9e98;
+  font-size: 35px;
+  border-radius: 50px;
+}
+#menu ul li:hover a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2rem;
+}
+.welcome {
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.7rem;
+  padding: 6px;
+}
+.welcome h1 {
+  padding-top: 5rem;
+  font-size: 2.8rem;
+}
+.welcome p {
+  padding: 3px 90px;
+  line-height: 1.5;
+}
+.welcome a {
+  color: #d4d3d3;
+}
+.launch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #9e9e98;
+  padding: 80px 20px;
+}
+.launch a {
+  color: #569ada;
+}
+.foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 0px 3px 3px #d1cece;
+  margin: 10px -8px;
+}
+.foot i {
+  padding: 5px 0px;
+}
+.foot a {
+  padding: 3px 2px;
+  color: black;
+  text-decoration: none;
+}
