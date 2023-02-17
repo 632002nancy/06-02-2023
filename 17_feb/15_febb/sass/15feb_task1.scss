@@ -1,0 +1,13 @@
+$white-color:white;
+.clr{
+    color: $white-color;
+}
+.title{
+    background-color: darken($white-color,100%);
+    width: 90px;
+    margin-top: -8px;
+}
+
+.btn{
+    color: $white-color;             /*color of text inside button*/
+}

@@ -1,0 +1,93 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body {
+  background-color: #333232;
+}
+.welcome {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.welcome ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.welcome ul li {
+  list-style-type: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #6d6c6c;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.welcome ul li:hover {
+  background-color: cadetblue;
+}
+.welcome ul li:active {
+  background-color: #69ad83;
+}
+.welcome ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.welcome ul li a:hover {
+  color: #d1bee4;
+}
+.welcome ul li a:visited {
+  background-color: #09d7df;
+  color: #d1bee4;
+}
+.welcome ul li a:active {
+  background-color: #69ad83;
+}
+.pelements {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  width: 50%;
+  /* it will increase the size of first line of paragraph  */
+  /* increase the size change the color of first letter of the paragraph  */
+  /* when we select any portion it will change its color to red and background to yellow  */
+}
+.pelements p::first-line {
+  font-size: 22px;
+}
+.pelements p::first-letter {
+  font-size: 40px;
+  color: #f5dfbf;
+}
+.pelements ::selection {
+  color: red;
+  background: yellow;
+}

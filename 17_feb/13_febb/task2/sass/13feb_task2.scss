@@ -1,0 +1,48 @@
+
+// ------------------------------------------------------------declaring sass-----------------------------------------------------
+$background_color:antiquewhite;
+
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexcol{
+   @include flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+@mixin width($w){
+    width: $w;
+}
+
+@mixin margin($tb,$lr){
+    margin-top: $tb;
+    margin-bottom: $tb;
+    margin-left: $lr;
+    margin-right: $lr
+}
+
+
+
+// ----------------------------------------implementing sass ------------------------------------------------------ 
+body{
+    background-color: $background_color;
+}
+
+.block1{
+    @include flexcol;
+    @include width(30%);
+    @include margin(auto,auto);
+}
+
+h5,p,h4{           /*selector grouping here we select different elements seperated by comma and apply same css to all */
+
+    background-color: burlywood;
+    @include margin(10px, 1px);
+    padding: 5px;
+
+
+}

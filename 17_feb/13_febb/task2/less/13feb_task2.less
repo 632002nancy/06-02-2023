@@ -1,0 +1,48 @@
+
+
+// ------------------------------------------------------------declaring less-----------------------------------------------------
+@background_color:antiquewhite;
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexcol:extend(.flex){
+    flex-direction: column;
+    text-align: center;
+}
+
+.width(@w){
+    width: @w;
+}
+
+.margin(@tb,@lr){
+    margin-top: @tb;
+    margin-bottom: @tb;
+    margin-left: @lr;
+    margin-right: @lr
+}
+
+
+
+// ----------------------------------------implementing less ------------------------------------------------------ 
+body{
+    background-color: @background_color;
+}
+
+.block1{
+    .flexcol;
+    .width(30%);
+    .margin(auto,auto);
+}
+
+h5,p,h4{           /*selector grouping here we select different elements seperated by comma and apply same css to all */
+
+    background-color: burlywood;
+    .margin(10px, 1px);
+    padding: 5px;
+
+
+}

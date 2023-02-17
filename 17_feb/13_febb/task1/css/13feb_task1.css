@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.box-dec {
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 3px green;
+}
+body {
+  background-color: #75afb1;
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #3baf8b;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 3px green;
+}
+#idtag {
+  background-color: aquamarine;
+}

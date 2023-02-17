@@ -1,0 +1,94 @@
+
+// ------------------------------------declaring less-----------------------------------
+$background-color:rgb(82, 110, 66);
+
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin margin($t,$b,$l,$r){
+    margin-top: $t;
+    margin-bottom: $b;
+    margin-left: $l;
+    margin-right: $r;
+}
+
+@mixin padding($t,$b,$l,$r){
+    padding-top: $t;
+    padding-bottom: $b;
+    padding-left: $l;
+    padding-right: $r;
+}
+
+@mixin width($w){
+    width: $w;
+}
+
+@mixin height($h){
+    height: $h;
+}
+
+// -------------------------------implementing less-------------------------------
+body{
+    background-color: $background-color;
+}
+
+.imgs{
+    @include flex;
+    flex-direction: row;
+        
+            .image{
+            @include flex;
+            @include margin(4rem,4rem,4rem,4rem);
+            background-color:rgb(30, 61, 30) ;
+            @include padding(15px, 20px, 8px, 8px);
+            box-shadow: 0px 0px 25px 1px rgb(165, 158, 158);
+            @include width(13%);
+
+
+                &:hover{
+                    padding: 25px;
+                }
+
+                img{
+                    @include width(95%);
+                    @include height(100%);
+                    box-shadow: 0px 0px 3px 1px rgb(206, 201, 201);
+
+                    &:hover{
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                h4{
+                    color: rgb(170, 166, 166);
+                }
+
+                p{
+                    @include margin(0px, 35px, auto, auto);
+                    color:rgb(163, 161, 161);
+                }
+
+                  button{
+                    background-color: grey;
+                    color: white;
+                    font-size: 16px;
+                    margin-top: 0px;
+                    border: 0px 5px solid rgb(92, 91, 91);
+                    border-radius: 30px;
+                    box-shadow: 0px 0px 3px 1px grey;
+                    @include padding(4px, 4px, 40px, 40px);
+
+                        &:hover{
+                            background-color: black;
+                            text-decoration: underline;
+                        }
+                }
+        }
+}

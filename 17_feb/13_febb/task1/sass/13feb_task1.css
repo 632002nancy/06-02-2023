@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(117, 175, 177);
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(59, 175, 139);
+  width: 40%;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 3px green;
+}
+
+#idtag {
+  background-color: aquamarine;
+}/*# sourceMappingURL=13feb_task1.css.map */

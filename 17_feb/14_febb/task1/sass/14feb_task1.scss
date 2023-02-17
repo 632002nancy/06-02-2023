@@ -1,0 +1,109 @@
+// --------------------------------------declaring less---------------------------------
+
+$background-color: rgb(51, 50, 50);
+
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin margin($t,$b,$l,$r){
+    margin-top: $t;
+    margin-bottom: $b;
+    margin-left: $l;
+    margin-right: $r;
+}
+
+@mixin padding($t,$b,$l,$r){
+    padding-top: $t;
+    padding-bottom: $b;
+    padding-left: $l;
+    padding-right: $r;
+}
+
+@mixin width($w){
+    width: $w;
+}
+
+@mixin height($h){
+    height: $h;
+}
+
+// -----------------------------------implementing less---------------------------------
+body{
+    background-color: $background-color;
+}
+
+
+
+.welcome{
+    color: white;
+    @include flex;
+    @include width(100%);
+    @include margin(auto, auto, auto, auto);
+
+        ul{
+            @include flex;
+
+                li{
+                    list-style-type: none;
+                    @include margin(5px, 5px, 50px, 50px);
+                    background-color: rgb(109, 108, 108);
+                    @include padding(20px,20px,20px,20px);
+                    border-radius: 2px;
+                    cursor: pointer;
+                        &:hover{
+                            background-color: cadetblue;
+                        }
+
+                        &:active{
+                            background-color: rgb(105, 173, 131);
+                        }
+
+                           a{ 
+                            text-decoration: none;
+                            color: white;
+                            font-size: 20px;
+                                &:hover{
+                                    color: rgb(209, 190, 228);
+                                }
+                                &:visited{
+                                    background-color: rgb(9, 215, 223);
+                                    color: rgb(209, 190, 228);
+                                }
+                                &:active{
+                                    background-color: rgb(105, 173, 131);
+                                }
+                           }
+                }
+        }
+}
+
+
+.pelements{
+    color:white;
+    @include flex;
+    @include margin(auto, auto, auto, auto);
+    margin-top: 2rem;
+    @include width(50%);
+    
+    /* it will increase the size of first line of paragraph  */
+        p::first-line{
+            font-size: 22px;
+        }
+        /* increase the size change the color of first letter of the paragraph  */
+        p::first-letter{
+            font-size: 40px;
+            color: rgb(245, 223, 191);
+        }
+
+        /* when we select any portion it will change its color to red and background to yellow  */
+        ::selection {
+        color: rgb(68, 110, 48);
+        background: rgb(228, 228, 180);
+        }
+}

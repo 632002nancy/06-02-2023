@@ -1,0 +1,193 @@
+// -----------------------------------declaring less---------------------------------- 
+@background-color: rgb(136, 165, 136);
+
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.margin(@t, @b, @l, @r) {
+    margin-top: @t;
+    margin-bottom: @b;
+    margin-left: @l;
+    margin-right: @r;
+}
+
+.padding(@t, @b, @l, @r) {
+    padding-top: @t;
+    padding-bottom: @b;
+    padding-left: @l;
+    padding-right: @r;
+}
+
+.width(@w) {
+    width: @w;
+}
+
+.height(@h) {
+    height: @h;
+}
+
+// -----------------------------------------implementing less ------------------------------------------
+body {
+    .flex;
+    background-color: @background-color;
+}
+
+#navbar{
+    .width(110%);
+    background-color: rgb(178, 202, 178);
+    margin-left: -8px; /* to get the light portion throughout the body*/
+    margin-right: -8px;
+    position: fixed;
+    // position: sticky;
+    bottom: 0.5rem;
+    ul {
+        .flex;
+        flex-direction: row;
+        .margin(10px, auto, 10px, 10px);
+        list-style-type: none;
+
+        li {
+            .padding(20px, 20px, 20px, 20px);
+
+            &:hover {
+                background-color: rgb(134, 163, 134);
+                border-radius: 8px;
+            }
+
+            a {
+                color: rgb(250, 241, 241);
+                text-decoration: none;
+                font-size: 25px;
+
+                &:focus {
+                    background-color: green;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .currentpage {
+        background-color: green;
+        color: black;
+    }
+
+}
+
+#home {
+    .flex;
+    
+    color: white;
+    .padding(100px, 100px, 20px, 20px);
+
+    h1 {
+        font-size: 60px;
+        text-shadow: 8px 8px 8px grey;
+    }
+
+    #travel {
+        color: rgb(237, 250, 235);
+        font-size: larger;
+        .padding(1px, 1px, 1px, 1px);
+    }
+}
+
+#about {
+    .flex;
+    .width(60%);
+    .margin(auto, auto, auto, auto);
+    color: rgb(220, 243, 209);
+    font-size: 20px;
+    background-color: rgb(100, 126, 105);
+    .padding(25px, 25px, 25px, 25px);
+    border-radius: 30px;
+
+    h4 {
+        text-shadow: 8px 8px 8px grey;
+        font-size: 50px;
+        color: rgb(220, 243, 209);
+        .margin(10px, 10px, 10px, 10px);
+        .padding(10px, 10px, 10px, 10px);
+
+    }
+    h5 {
+        .margin(0px, 0px, 0px, 0px);
+        .padding(0px, 0px, 0px, 0px);
+        font-size: 25px;
+        color: rgb(220, 243, 209);
+    }
+}
+
+#contact {
+    .flex;
+    background-color: rgb(90, 139, 105);
+    .width(70%);
+    .margin(70px, auto, auto, auto);
+    border-radius: 40px;
+    color: rgb(199, 247, 210);
+
+    h4 {
+        font-size: 40px;
+    }
+
+    i {
+        .margin(10px, 10px, 10px, 10px);
+        .padding(10px, 10px, 10px, 10px);
+
+        &:hover {
+            font-size: x-large;
+        }
+    }
+
+    a {
+        .padding(0px, 0px, 4px, 4px);
+    }
+}
+
+.imgs{
+   .flex;
+   flex-direction: row;
+    .image{
+        .flex;
+        .margin(15px,15px,15px,15px); background-color: rgb(200, 245, 207);
+        padding: 8px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        box-shadow: 0px 0px 25px 1px black;
+        .width(15%);
+
+
+            img{
+                .width(150px);
+                .height(200px);
+                box-shadow: 0px 0px 3px 1px grey;
+            }
+
+            p{
+                margin-top: 0px;
+                margin-bottom:35px ;
+                color: black;
+            }
+
+            h4{
+                color: black;
+            }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav1 , .about1 , .home1 , .icon , .image{
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          
+        }
+        .imgs{
+            flex-direction: column;
+            width: 50%;
+        }
+      }

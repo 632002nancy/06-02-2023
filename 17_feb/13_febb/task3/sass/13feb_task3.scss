@@ -1,0 +1,38 @@
+
+// ---------------------------------------------declaring less----------------------------------------
+$background-color: rgb(178, 221, 224);
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin box{
+    box-shadow: 0px 0px 40px 0.5px greenyellow;
+}
+
+@mixin padding($p){
+    padding: $p;
+}
+
+@mixin width($w){
+    width: $w;
+}
+
+// -------------------------------------------------implementing less ---------------------------------------
+body{
+    background-color: $background-color;
+    @include flex;
+    padding: 2rem;
+}
+
+.external{
+    @include flex;
+    @include box;
+    @include padding(2em);
+    @include width(30%);
+    background-color: rgb(85, 133, 133);
+}

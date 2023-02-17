@@ -1,0 +1,150 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: #f3eaf5;
+}
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar ul li {
+  list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: #e0c3f3;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px solid #9106ee;
+  border-radius: 20px;
+}
+#navbar ul li:hover {
+  background-color: #ebbcbc;
+}
+#navbar ul li:active {
+  text-decoration: underline;
+  background-color: #d1f7a6;
+}
+#navbar ul li:visited {
+  text-decoration: underline;
+  background-color: #4a9bc0;
+}
+#navbar ul li a {
+  text-decoration: none;
+  color: #393649;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#navbar ul li a:hover {
+  color: #db2ea2;
+}
+#navbar ul li a:active {
+  color: #09490e;
+}
+#navbar ul li a:visited {
+  color: #043058;
+}
+#img_computer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+#img_computer img {
+  width: 300px;
+  height: 200px;
+  box-shadow: 0px 0px 30px 0px #f78442;
+}
+#img_computer h1 {
+  text-decoration: underline 1.5px;
+  color: #49048a;
+}
+#computer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0%;
+  height: 60%;
+  margin-top: 30px;
+  background-color: #e7d2fc;
+  box-shadow: 0px 0px 20px 3px purple;
+}
+#computer h2 {
+  margin-bottom: 20px;
+  color: #2f0358;
+}
+#computer ul {
+  margin-top: 0px;
+  list-style-image: url('https://webdocs.cs.ualberta.ca/~aixplore/learning/DecisionTrees/InterArticle/graphics/small-computer.gif');
+  /*takes image as the marker for the list*/
+}
+#computer ul li {
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-style: bold;
+  font-size: 1.8rem;
+}
+.table1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 20px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #e68293;
+  box-shadow: 0px 0px 10px 6px #f1aed3;
+}
+.table1 th {
+  border-bottom: 1px solid black;
+}
+.table1 td {
+  border-bottom: 1px solid grey;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 0px 4px 5px grey;
+}
+.icons i {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}

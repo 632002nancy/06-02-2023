@@ -1,0 +1,194 @@
+// -----------------------------------declaring less---------------------------------- 
+$background-color: rgb(136, 165, 136);
+
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin margin($t, $b, $l, $r) {
+    margin-top: $t;
+    margin-bottom: $b;
+    margin-left: $l;
+    margin-right: $r;
+}
+
+@mixin padding($t, $b, $l, $r) {
+    padding-top: $t;
+    padding-bottom: $b;
+    padding-left: $l;
+    padding-right: $r;
+}
+
+@mixin width($w) {
+    width: $w;
+}
+
+@mixin height($h) {
+    height: $h;
+}
+
+// -----------------------------------------implementing less ------------------------------------------
+body {
+    @include flex;
+    background-color: $background-color;
+}
+
+#navbar{
+    @include width(110%);
+    background-color: rgb(178, 202, 178);
+    margin-left: -8px; /* to get the light portion throughout the body*/
+    margin-right: -8px;
+    position: fixed;
+    // position: sticky;
+    bottom: 0.5rem;
+    ul {
+        @include flex;
+        flex-direction: row;
+        @include margin(10px, auto, 10px, 10px);
+        list-style-type: none;
+
+        li {
+            @include padding(20px, 20px, 20px, 20px);
+
+            &:hover {
+                background-color: rgb(134, 163, 134);
+                border-radius: 8px;
+            }
+
+            a {
+                color: rgb(250, 241, 241);
+                text-decoration: none;
+                font-size: 25px;
+
+                &:focus {
+                    background-color: green;
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .currentpage {
+        background-color: green;
+        color: black;
+    }
+
+}
+
+#home {
+    @include flex;
+    
+    color: white;
+    @include padding(100px, 100px, 20px, 20px);
+
+    h1 {
+        font-size: 60px;
+        text-shadow: 8px 8px 8px grey;
+    }
+
+    #travel {
+        color: rgb(237, 250, 235);
+        font-size: larger;
+        @include padding(1px, 1px, 1px, 1px);
+    }
+}
+
+#about {
+    @include flex;
+    @include width(60%);
+    @include margin(auto, auto, auto, auto);
+    color: rgb(220, 243, 209);
+    font-size: 20px;
+    background-color: rgb(100, 126, 105);
+    @include padding(25px, 25px, 25px, 25px);
+    border-radius: 30px;
+
+    h4 {
+        text-shadow: 8px 8px 8px grey;
+        font-size: 50px;
+        color: rgb(220, 243, 209);
+        @include margin(10px, 10px, 10px, 10px);
+        @include padding(10px, 10px, 10px, 10px);
+
+    }
+    h5 {
+        @include margin(0px, 0px, 0px, 0px);
+        @include padding(0px, 0px, 0px, 0px);
+        font-size: 25px;
+        color: rgb(220, 243, 209);
+    }
+}
+
+#contact {
+    @include flex;
+    background-color: rgb(90, 139, 105);
+    @include width(70%);
+    @include margin(70px, auto, auto, auto);
+    border-radius: 40px;
+    color: rgb(199, 247, 210);
+
+    h4 {
+        font-size: 40px;
+    }
+
+    i {
+        @include margin(10px, 10px, 10px, 10px);
+        @include padding(10px, 10px, 10px, 10px);
+
+        &:hover {
+            font-size: x-large;
+        }
+    }
+
+    a {
+        @include padding(0px, 0px, 4px, 4px);
+    }
+}
+
+.imgs{
+   @include flex;
+   flex-direction: row;
+    .image{
+        @include flex;
+        @include margin(15px,15px,15px,15px);
+         background-color: rgb(200, 245, 207);
+        padding: 8px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+        box-shadow: 0px 0px 25px 1px black;
+        @include width(15%);
+
+
+            img{
+                @include width(150px);
+                @include height(200px);
+                box-shadow: 0px 0px 3px 1px grey;
+            }
+
+            p{
+                margin-top: 0px;
+                margin-bottom:35px ;
+                color: black;
+            }
+
+            h4{
+                color: black;
+            }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .nav1 , .about1 , .home1 , .icon , .image{
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          
+        }
+        .imgs{
+            flex-direction: column;
+            width: 50%;
+        }
+      }
