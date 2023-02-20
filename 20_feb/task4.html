@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <!-- ----------------------------------------------------var------------------------------------------------ -->
+    <div id="var">
+
+        <h3>var, let,const</h3>
+        <!-- var is a keyword used to declare variable in js  -->
+        <!-- used in all JavaScript code from 1995 to 2015, it can be redeclared and reassigned -->
+        <!-- js automatically detect its data type  -->
+        <script>
+             document.write("when a is declared as 1 in var:"+ a + '<br>');   // can be used even before declaration bt it will have value stored as undefined
+            
+            var a=1;
+            document.write("when a is declared as 1 in var:"+ a + '<br>');
+            
+            a=2;
+            document.write("when a is reassigned as 2 in var:"+ a + '<br>');     //reassigning value
+
+            var a=5;
+            document.write("when a is redeclared as 5 in var:"+ a + '<br>' + '<br>');          //redeclaring variable
+
+
+
+
+            // let is a keyword used to declare variable in js 
+            // introduced in ES6 (2015)
+            // must be declared before it is used 
+            let b=1;
+            document.write("when b is declared as 1 in let:"+ b + '<br>');
+
+            b=2;
+            document.write("when b is declared as 1 in let:"+ b + '<br>' + '<br>');         //reassigning value
+
+          //  let b=5;                       this will give an error as we can not redeclare in an already existing variable in let
+
+
+
+
+          //const cannot be Redeclared
+          //const cannot be Reassigned.
+          //const have Block Scope.
+          //must assigned value when they are declared
+          const c=1;
+          document.write("when c is declared as 1 in const:"+ c + '<br>' + '<br>');
+
+         // c=2;      //cannot reassign value to a const variable.
+
+          //but we can make changes in the elements of const array bcz onst mean constant reference to a value
+          // You can create a constant array and reassign its elements bt we can not reassign the array
+            const cars = ["Saab", "Volvo", "BMW"];
+            document.write("Array before changing its elements: " + cars + '<br>');
+            // You can change an element:
+            cars[0] = "Toyota";
+
+            // You can add an element:
+            cars.push("Audi");
+            document.write("Array after changing its elements: " + cars + '<br>' + '<br>');
+
+           // cars = ["Toyota", "Volvo", "Audi"];//an't reassign the array
+
+            // You can create a const object, modify its properties or add its properties
+            const car = {type:"Fiat", model:"500", color:"white"};
+            document.write("const object before: " + car.color + '<br>');
+
+            // You can change a property:
+            car.color = "red";
+            document.write("const object after: " + car.color + '<br>');
+            // You can add a property:
+            car.owner = "Johnson";
+            document.write("const object after adding an object: " + car.owner + '<br>');
+
+            //but we can't reassign const object
+           // car = {type:"Volvo", model:"EX60", color:"red"}; 
+          </script>
+    </div>
+
+    
+
+
+</body>
+</html>
