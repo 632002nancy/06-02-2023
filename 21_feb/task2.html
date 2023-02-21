@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patterns in js</title>
+</head>
+
+<body>
+    <h3>Pattern:2</h3><br>
+    <button type="button" onclick="pat1()">pattern 1</button>
+    <p id="p1"></p>
+    <button type="button" onclick="pat2()">pattern 2</button>
+    <p id="p2"></p>
+
+    <script>
+
+        function pat1() {
+            let num = 5;
+            let str = "";
+            let i = 1;
+            //for moving in rows
+           while(i<=num) {
+                let j = 1;
+
+                //for moving in columns
+                while (j <= num) 
+                {
+                    if (i == 1 || i == num) {
+                          document.write("*");
+                        j++;
+                    }
+                    else {
+                          document.write("*");
+                    //for spaces of the rectangle
+                  for (let k = 1; k <= num - 2; k++) 
+                  {
+                      document.write("&nbsp; ");
+                  }
+                  j = j + num - 1;
+              }
+            }
+                      document.write('</br></br>');
+             i++;
+           }
+        }
+
+        function pat2() {
+            let n = 5;
+            let string = "";
+            // External loop
+            for (let i = 1; i <= n; i++) {
+                // creating spaces
+                for (let j = 1; j <= n - i; j++) {
+                    string += "&nbsp; ";
+                }
+                // printing numbers
+                for (let k = 1; k <= 2 * i - 1; k++) {
+                    string += k;
+                }
+                string += "<br>"; //for next line
+            }
+            document.getElementById("p2").innerHTML = string;
+        }
+
+    </script>
+</body>
+
+</html>
