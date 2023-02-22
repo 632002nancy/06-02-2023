@@ -1,4 +1,4 @@
-// ---------------------------------------array--------------------------------------- 
+// ---------------------------------------array of objects--------------------------------------- 
 
 //declaring array of objects
 // objects: key-value pairs 
@@ -10,12 +10,37 @@ const arr=[
      {schoolname:"KV",class:"12"}
 
 ];
-
+// -----------------------------------------------array------------------------------------------------------------------ 
 //declaring normal array
-const arr1=["banana","apple","kiwi"];
+const arr1=["banana","apple","kiwi","apple","apple"];
 
 console.log(arr1.toString());          //print the content as string
 console.log(arr1);               //print the content as array elements
+
+console.log(arr1.includes("banana"));                      //it gives true or false result if the banana is present ornot
+console.log(arr1.indexOf('apple'));                     //gives first index of the occurence of the apple
+console.log(arr1.lastIndexOf('apple'));               //gives last index of the occurence of the apple
+
+
+// ----------------------------------------------------object------------------------------------------------------------
+const obj={
+    firstName:"aditya",
+    lastName:"singh",
+    age:23,
+    fullname:function(){
+        return this.firstName+ " " +this.lastName; //here this keyword is refering to current parent i.e., obj in this case
+    }
+};
+console.log(obj.fullname());   //displaying fullname using function of the object
+
+console.log(obj.fullname().toUpperCase());    //using built in function toUpperCase() in user-defined function fullname()
+
+const obj1=new Object();        //creating an object using new object() property
+obj1.name="Yash raj";
+obj1.age=23;
+obj1.id=42631;
+
+console.log(obj1);
 
 // ------------------------------------using methods on array of objects ---------------------------------- 
 
@@ -86,3 +111,33 @@ const f=arr.entries();
 for(let x of f){
     console.log(x);                   //print all key-value pairs
 }
+
+// -----------------------------------------------------------------nested array and objects-----------------------------------------------------------
+//we can fix array inside object and object inside tht array:
+
+const ob={
+    name:"Rohit",
+    age:34,
+     carOfRohit:[         //array inside object
+     {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},//object inside array
+     {name:"BMW", models:["320", "X3", "X5"]},   //array inside object
+     {name:"Fiat", models:["500", "Panda"]}],
+
+     get ageR(){                        //using getter property as its syntex is simpler and can secure better data quality
+            return this.age;
+     },
+
+     set ager(age1){                   //setter property is used to set the age 
+        this.age=age1;
+     } 
+};
+
+
+console.log(ob.carOfRohit[0].name);    //gives name of object at first index of array of object ob
+console.log(ob.ageR);
+
+ob.age1=22;                              //here the age is set
+console.log(ob.age1);
+
+let mystring=JSON.stringify(ob);    //json used to read from web server and displey it to web page   here the object is converted to string
+console.log(mystring);              //JSON.stringify will not stringify fnctions

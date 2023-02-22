@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area in js</title>
+</head>
+<body>
+    <h2>Area </h2>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <h4>For Area of Square</h4>
+        <button onclick="onsquare()">Click here to see the area of SQUARE</button>
+        <p id="squareArea"></p>
+        <h4>For Area of Circle</h4>
+        <button onclick="oncircle()">Click here to see the area of CIRCLE</button>
+        <p id="circleArea"></p>
+        <h4>For Area of Rectangle</h4>
+        <button onclick="onrectangle()">Click here to see the area of RECTANGLE</button>
+        <p id="rectangleArea"></p>
+    </div>
+
+
+    <script>
+            class Area{
+                square(s){
+                    return s*s;
+                }
+                circle(r){
+                    return 3.14*r*r;
+                }
+                rectangle(l,b){
+                    return l*b;
+                }
+            }
+           let clsobj = new Area(); 
+
+               function onsquare(){
+                let side = prompt("Enter sides of square");
+                let x = clsobj.square(side);
+                document.getElementById("squareArea").innerHTML="Area of square is " + x;
+                }
+            
+               function oncircle(){
+                let radius = prompt("Enter radius of circle");
+                let y = clsobj.circle(radius);
+                document.getElementById("circleArea").innerHTML="Area of circle is " + y;
+                }
+            
+               function onrectangle(){
+                let length = prompt("Enter length of rectangle");
+                let breadth = prompt("Enter breadth of rectangle");
+                let z = clsobj.rectangle(length,breadth);
+                document.getElementById("rectangleArea").innerHTML="Area of rectangle is " + z;
+                }
+            
+      
+    </script>
+</body>
+</html>
