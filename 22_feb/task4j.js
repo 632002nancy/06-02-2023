@@ -1,23 +1,19 @@
 
-
-// function validinput(){
-//     try{
-//         if(IsNaN(principal,time,rate)) {throw "Ivalid Input please write numbers!!!"}
-//         if(rate>100||rate<=0||principal<=0||time<=0){ throw "Please provide correct rate between 1-100"}
-//     }
-//     catch(err){
-//         document.write(err);
-//     }
-// }
-
-
-
+function validinput(){
+    try{
+        if(IsNaN(principal,time,rate)) {throw "Ivalid Input please write numbers!!!"}
+        if(rate>100||rate<=0||principal<=0||time<=0){ throw "Please provide correct rate between 1-100"}
+    }
+    catch(err){
+        document.write(err);
+    } 
+}
 
 function simpleInterest(){
 
-    let p=document.getElementById("principal");
-    let r=document.getElementById("rate");
-    let t=document.getElementById("time");
+    let p = document.getElementById("principal");
+    let r = document.getElementById("rate");
+    let t = document.getElementById("time");
 
      a = parseFloat(p.value);        //parse string and return float pointing number
      b = parseFloat(r.value);
@@ -37,6 +33,6 @@ function compoundInterest(){
      b= parseFloat(r.value);
      c= parseFloat(t.value);
 
-    document.getElementById("si").innerHTML="The simple interest is "+ (principal*(1+(rate/100)**time)-principal);
+    document.getElementById("ci").innerHTML="The compound interest is "+ ((a*((1+(b/100))**c))-a);
 }
 
