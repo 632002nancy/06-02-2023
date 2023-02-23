@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel</title>
+</head>
+
+
+<style>
+    #bd {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin: auto;
+    }
+
+    #cities {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+</style>
+
+
+<body>
+    <div id="bd">
+        <h1>Enter your desired cities</h1>
+        <div id="cities">
+            <h4 id="from">FROM:</h4>
+            <select id="source" class="route" onchange="disabledest(this);">
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Pune">Pune</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+
+            <h4 id="to">TO:</h4>
+          <select id="destination" class="route" onchange="disablesource(this);">      <!-- this keyword returns the selected option -->
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Pune">Pune</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+
+            <button id="destInput" type="button" onclick="printroute()">Check route</button>
+        </div>
+
+
+<p id="demo"></p>
+
+        <button type="button" onclick="clearroute()">Clear Routes...</button>
+    </div>
+<!-- ------------------------------------------------------------------------javascript-------------------------------------------------------------------------------  -->
+
+    <script>
+        let  selectsource = document.getElementById("source");
+        let  selectdest = document.getElementById("destination");
+
+
+        // -----------------------to disable in destination list ------------------------
+                function disabledest(item) {
+                 //let y = document.getElementsByClassName("route");
+                     let selectedCity= item.selectedIndex;  //gives the index of item selected
+                    for(let j=0;j<selectdest.options.length;j++){          //moves in destination list
+                        if(j===selectedCity){selectdest.options[selectedCity].disabled="true"; continue;}        //if index of selected item and j are equal then disable option with j index
+                        selectdest.options[j].disabled=false;
+                    }
+                }
+// --------------------------to disable in source list ------------------------
+                function disablesource(item){
+                    let selectedCity= item.selectedIndex;
+                    for(let j=0;j<selectsource.options.length;j++){
+                        if(j==selectedCity){selectsource.options[selectedCity].disabled="true"; continue;}
+                        selectsource.options[j].disabled=false;
+                    }
+                }
+
+                function checking(){
+
+                }
+// ----------------------------to display route list --------------------------------- 
+                var text=[];                  //declaring outside so that it will not get reassigned with initial
+                function printroute(){
+                    var soval= selectsource.options[selectsource.selectedIndex].value;
+                    var sodest= selectdest.options[selectdest.selectedIndex].value;
+                     text.push(soval+" to "+sodest + '<br>');
+                   
+                        document.getElementById("demo").innerHTML+=soval+" to "+sodest + '<br>';
+                }
+
+
+                function checking(){
+                    for(let i=0;i<=soval;i++){
+                        if(selectsource.option.value==soval[i]){
+                            sodest[i].disabled="true";
+                        }
+                    }
+                }
+    //   ------------------------------------to clear route lists----------------------------          
+         function clearroute(){
+            document.getElementById("demo").innerHTML="";
+         }   
+
+     
+
+    </script>
+</body>
+
+</html>

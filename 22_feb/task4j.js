@@ -37,6 +37,6 @@ function compoundInterest(){
      b= parseFloat(r.value);
      c= parseFloat(t.value);
 
-    document.getElementById("si").innerHTML="The simple interest is "+ (principal*(1+(rate/100)**time)-principal);
+    document.getElementById("si").innerHTML="The simple interest is "+ ((a*(1+(b/100)**c))-a);
 }
 

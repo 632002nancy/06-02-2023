@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElement tags</title>
+</head>
+<body>
+    
+<h2>getElementById</h2>
+
+<h4>Cars</h4>
+<p id="getId">Zigwheels brings a complete range of cars in India. Search cars by applying filters such as by price range, by transmission type, by bodytype, by brand, by engine cc, and more features. Also, stay updated with upcoming cars in India, compare four-wheelers in your price range and stay tuned to the latest car news.</p>
+<a href="#" onclick="idsyntax()">Click here to change the content of above paragraph!!!</a><br><br>
+
+<a href="#" onclick="tagsyntax()">Click here to change the font size and color of element headings(h4)!!!</a>
+
+<h4>Bike</h4>
+<p class="getClassName">Check out the latest and best new bikes in India along with detailed prices and offers only on ZigWheels. You can search new bikes by brand like TVS, Honda, Royal Enfield, Hero, Yamaha and many more. </p>
+<h4>Sports Bike</h4>
+<p class="getClassName">Take a look at popular sports bikes available in India in the price range of Rs. 90,620 - Rs. 69.99 Lakh. The most popular sports bikes include Yamaha MT 15 V2 (Rs. 1.69 Lakh), Yamaha R15 V4 (Rs. 1.81 Lakh) and TVS Raider (Rs. 90,620). The top manufacturers that produce sports bikes are Yamaha, TVS, Bajaj, Kawasaki, KTM.</p>
+<a href="#" onclick="classSyntax()">Click here to change the content of above two paragraph with class!!!</a>
+
+<h4>Cycle</h4>
+<p>First Name: <input name="fname" type="text" value="Michael"></p>
+<p>First Name: <input name="fname" type="text" value="Doug"></p>
+<a href="#" onclick="namesyntax()">Click here to get the value of first input element!!!</a>
+<p id="demo"></p>
+
+<script>
+    // ------------------------------getElementById-------------------------------------------------------
+    idsyntax = () =>{
+    document.getElementById("getId").innerHTML="Element With Id is changed using getElementById attribute."; //element with id getid is changed
+        
+       }
+ 
+    // ------------------------------getElementByTagName-------------------------------------------------------
+    tagsyntax = () =>{
+        const idd2=document.getElementsByTagName("h4");         //return all the element with tagname h4 and p , it is read-only property
+        for (let i = 0; i < idd2.length; i++) {             //saaved as array
+            idd2[i].style.color = "brown";
+            idd2[i].style.fontSize = "2rem";
+        }
+       }
+ 
+    // ------------------------------getElementClassByName-------------------------------------------------------
+    classSyntax = () =>{
+        const idd3=document.getElementsByClassName("getClassName");
+        idd3[0].innerHTML="First Element with class is changed using getElementByClassName."
+        idd3[1].style.color="green";
+       }
+ 
+    // ------------------------------getElementByName-------------------------------------------------------
+    namesyntax = () =>{
+        const idd4=document.getElementsByName("fname");  
+        document.getElementById("demo").innerHTML=idd4[0].value;
+       }
+ 
+</script>
+ </body>
+ </html>

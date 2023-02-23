@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+    
+        #bulbimg{
+            width: 20%;
+            height: 20%;
+            
+        }
+        #bulb{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="bulb">
+        <button id="bulbbutton"  type="button" onclick="bulbstatus()">Click here to Turn-On the Bulb...</button>
+        <img id="bulbimg" src="img2.jpg" alt="bulb img">
+    </div>
+
+
+    <script>
+        function bulbstatus(){
+            if(document.getElementById("bulbbutton").innerHTML=="Click here to Turn-On the Bulb..."){
+                document.getElementById("bulbimg").src="img1.jpg";
+                document.getElementById("bulbbutton").innerHTML="Click here to Turn-Off the Bulb...";
+            }
+            else{
+                document.getElementById("bulbimg").src="img2.jpg";
+                document.getElementById("bulbbutton").innerHTML="Click here to Turn-On the Bulb...";
+            }
+            
+        }
+    </script>
+</body>
+</html>
