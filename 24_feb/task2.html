@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventdefault & stoppropogation</title>
+</head>
+<style>
+    div{
+        background-color: rgba(204, 209, 162, 0.6);
+        padding: 2rem;
+    }
+</style>
+<body>
+    <h2>Welcome to PreventDefault() tutorial</h2>
+<!-- ---------------------------prevent default ----------------------------- -->
+<!-- prevent default prevents the default functionality of the window event to occur  -->
+    <a href="https://google.com" onclick="func()" id="anchor">Click Here</a>
+    <p id="demo"></p>
+
+
+    <!-- ------------------------------------stop propogation ------------------------------  -->
+   <div onclick="func1()">DIV 1
+    <div onclick="func2()"> DIV 2</div>
+   </div>
+
+   Stop Propogation for div:
+ <input type="checkbox" id="box1">
+  
+
+    <script>
+        function func(){
+            event.preventDefault();              //when event occurs event object is passed as parameter
+            document.getElementById("demo").innerHTML="Prevent default event is called!!!";
+        }
+
+
+        // ---------------------------stop propogation --------------------------------- 
+       
+        function func1(){
+            if(document.getElementById("box1").checked){
+                event.stopPropogation();
+            }
+             alert("div 1 is called");
+            
+        }
+       function func2(){ 
+      
+            alert("div 2 is called");
+        }
+     
+
+   
+    </script>
+</body>
+</html>

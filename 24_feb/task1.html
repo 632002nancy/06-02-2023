@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form using js</title>
+    <script src="task1j.js" defer></script>
+</head>
+<body>
+    <form id="Rform">
+        <h1>Registration Form</h1>
+        <p>Enter Name:<input type="text" name="nm" size="20" required></p>
+        <p>Enter Address:<input type="text" name="address" size="30" required></p>
+        <p>Enter Phone Number:<input type="number" size="10" name="pno" required></p>
+        <p>Enter E-Mail:<input type="email" name="email" size="20" required></p>
+        <p>Enter Password:<input type="text" name="pass" size="20" required></p>
+        <p>
+            SELECT YOUR COURSE
+            <select type="text" value="" name="subject">
+                <option></option>
+                <option>BTECH</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>B.COM</option>
+            </select>
+        </p>
+    
+    <p id="dispdetails"></p>
+
+        <button type="submit" onclick="checkdetails()">Submit Details</button>
+        <button type="reset">Reset Details</button>
+    </form>
+    
+   
+
+</body>
+</html>
