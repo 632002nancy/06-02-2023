@@ -33,7 +33,8 @@
         <h1>Enter your desired cities</h1>
         <div id="cities">
             <h4 id="from">FROM:</h4>
-            <select id="source" class="route" onchange="disabledest(this);">
+            <select id="source" class="route" onchange="disabledest(this);" onmousedown="click();">
+                <option value=""></option>
                 <option value="Delhi">Delhi</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Banglore">Banglore</option>
@@ -42,7 +43,8 @@
             </select>
 
             <h4 id="to">TO:</h4>
-          <select id="destination" class="route" onchange="disablesource(this);">      <!-- this keyword returns the selected option -->
+          <select id="destination" class="route" onchange="disablesource(this);" onmousedown="click();">      <!-- this keyword returns the selected option -->
+                <option value=""></option>
                 <option value="Delhi">Delhi</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Banglore">Banglore</option>
@@ -56,7 +58,7 @@
 
 <p id="demo"></p>
 
-        <button type="button" onclick="clearroute()">Clear Routes...</button>
+        <button type="reset" onclick="clearroute()">Clear Routes...</button>
     </div>
 <!-- ------------------------------------------------------------------------javascript-------------------------------------------------------------------------------  -->
 
@@ -83,28 +85,22 @@
                     }
                 }
 
-                function checking(){
-
-                }
+             
 // ----------------------------to display route list --------------------------------- 
-                var text=[];                  //declaring outside so that it will not get reassigned with initial
-                function printroute(){
-                    var soval= selectsource.options[selectsource.selectedIndex].value;
-                    var sodest= selectdest.options[selectdest.selectedIndex].value;
-                     text.push(soval+" to "+sodest + '<br>');
-                   
-                        document.getElementById("demo").innerHTML+=soval+" to "+sodest + '<br>';
-                }
+let total_route=[];
+function printroute(){
+    let soval = selectsource.options[selectsource.selectedIndex].value;
+    let sodest = selectdest.options[selectdest.selectedIndex].value;
 
-
-                function checking(){
-                    for(let i=0;i<=soval;i++){
-                        if(selectsource.option.value==soval[i]){
-                            sodest[i].disabled="true";
-                            
-                        }
-                    }
-                }
+    //checking through the array if value of source and destination already exsists 
+    for(let i =0;i<total_route.length;i++){
+        if(total_route[i].from === soval && total_route[i].to === sodest ){return}
+    }
+    document.getElementById("demo").innerHTML += soval + " to " +  sodest + "<br>";
+    let obj ={from:soval,to:sodest};           //creating array to store from and to data 
+    total_route.push(obj);
+    
+}
     //   ------------------------------------to clear route lists----------------------------          
          function clearroute(){
             document.getElementById("demo").innerHTML="";
