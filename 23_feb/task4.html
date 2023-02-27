@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>travel</title>
 </head>
-
-
-<style>
+ <style> /*-------------------------------------CSS-----------------------------------*/
     #bd {
         display: flex;
         flex-direction: column;
@@ -18,7 +15,6 @@
         width: 50%;
         margin: auto;
     }
-
     #cities {
         display: flex;
         justify-content: center;
@@ -26,93 +22,120 @@
         padding: 2rem;
     }
 </style>
-
-
-<body>
+<body> <!----------------------HTML------------------------------->
     <div id="bd">
         <h1>Enter your desired cities</h1>
         <div id="cities">
             <h4 id="from">FROM:</h4>
-            <select id="source" class="route" onchange="disabledest(this);">
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Banglore">Banglore</option>
-                <option value="Pune">Pune</option>
-                <option value="Hyderabad">Hyderabad</option>
+            <select id="source" class="route" onchange="disabledest(this);">   <!-- this keyword returns the selected option -->
+                <option value="empty"></option>
             </select>
 
             <h4 id="to">TO:</h4>
-          <select id="destination" class="route" onchange="disablesource(this);">      <!-- this keyword returns the selected option -->
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Banglore">Banglore</option>
-                <option value="Pune">Pune</option>
-                <option value="Hyderabad">Hyderabad</option>
+            <select id="destination" class="route" onchange="disablesource(this);">
+                <option value="empty"></option>
             </select>
 
-            <button id="destInput" type="button" onclick="printroute()">Check route</button>
+            <button id="destInput" type="button" onclick="printroute()">Add route</button>
         </div>
 
+        <p id="demo"></p>
 
-<p id="demo"></p>
-
-        <button type="button" onclick="clearroute()">Clear Routes...</button>
+        <button type="reset" onclick="clearroute()">Clear Routes...</button>
     </div>
-<!-- ------------------------------------------------------------------------javascript-------------------------------------------------------------------------------  -->
+    <!-- ------------------------------------------------------------------------javascript-------------------------------------------------------------------------------  -->
 
     <script>
-        let  selectsource = document.getElementById("source");
-        let  selectdest = document.getElementById("destination");
+        let places = ["Delhi", "Mumbai", "Pune", "Hyderabad", "Banglore"];
 
+        let selectsource = document.getElementById("source");
+        let selectdest = document.getElementById("destination");
+
+        //creating for source
+        for (let i = 0; i < places.length; i++) {
+            let opt = document.createElement("option");                 // creating options using js
+            opt.textContent = places[i];
+            opt.value = places[i];
+            selectsource.appendChild(opt);
+        }
+        //creating for destination
+        for (let i = 0; i < places.length; i++) {
+            let opt2 = document.createElement("option");
+            opt2.textContent = places[i];
+            opt2.value = places[i];
+            selectdest.appendChild(opt2);
+        }
 
         // -----------------------to disable in destination list ------------------------
-                function disabledest(item) {
-                 //let y = document.getElementsByClassName("route");
-                     let selectedCity= item.selectedIndex;  //gives the index of item selected
-                    for(let j=0;j<selectdest.options.length;j++){          //moves in destination list
-                        if(j===selectedCity){selectdest.options[selectedCity].disabled="true"; continue;}        //if index of selected item and j are equal then disable option with j index
-                        selectdest.options[j].disabled=false;
-                    }
+        let total_route = [];
+        function disabledest(item) {
+           //disabling the current city in destination list
+            let selectedCity = item.selectedIndex;  //gives the index of item selected
+            for (let j = 0; j < selectdest.options.length; j++) {          //moves in destination list
+                if (j === selectedCity) {
+                    selectdest.options[selectedCity].disabled = "true"; //if index of selected item and j are equal then disable option with j index
+                    continue;
                 }
-// --------------------------to disable in source list ------------------------
-                function disablesource(item){
-                    let selectedCity= item.selectedIndex;
-                    for(let j=0;j<selectsource.options.length;j++){
-                        if(j==selectedCity){selectsource.options[selectedCity].disabled="true"; continue;}
-                        selectsource.options[j].disabled=false;
-                    }
-                }
-
-                function checking(){
-
-                }
-// ----------------------------to display route list --------------------------------- 
-                var text=[];                  //declaring outside so that it will not get reassigned with initial
-                function printroute(){
-                    var soval= selectsource.options[selectsource.selectedIndex].value;
-                    var sodest= selectdest.options[selectdest.selectedIndex].value;
-                     text.push(soval+" to "+sodest + '<br>');
-                   
-                        document.getElementById("demo").innerHTML+=soval+" to "+sodest + '<br>';
-                }
-
-
-                function checking(){
-                    for(let i=0;i<=soval;i++){
-                        if(selectsource.option.value==soval[i]){
-                            sodest[i].disabled="true";
-                            
+                selectdest.options[j].disabled = false;          //enable rest option
+            }
+             //disabling all destinations with same source (item)
+            for (let i = 0; i < total_route.length; i++) {
+                if (total_route[i].from === item.value) {            //if value of current option(item) is equal to from in array (of objects)
+                    for(let j=0;j<selectdest.length;j++){        //find the index of the value in destination list
+                        if(selectdest.options[j].value === total_route[i].to){            //if value in array and list matches disable the index in list
+                            selectdest.options[j].disabled ="true";
                         }
                     }
                 }
-    //   ------------------------------------to clear route lists----------------------------          
-         function clearroute(){
-            document.getElementById("demo").innerHTML="";
-         }   
+            }
+        }
+        // --------------------------to disable in source list ------------------------
+        function disablesource(item) {
+            let selectedCity = item.selectedIndex;
+            for (let j = 0; j < selectsource.options.length; j++) {
 
-     
+                if (j == selectedCity) { selectsource.options[selectedCity].disabled = "true"; continue; }
+                selectsource.options[j].disabled = false;
+            }
 
+            for (let i = 0; i < total_route.length; i++) {
+                if (total_route[i].to === item.value) {
+                    for(let j=0;j<selectsource.length;j++){
+                        if(selectsource.options[j].value === total_route[i].from){
+                            selectsource.options[j].disabled ="true";
+                        }
+                    }
+
+                }
+            }
+
+        }
+        // ----------------------------to display route list --------------------------------- 
+        function printroute() {
+            let soval = selectsource.options[selectsource.selectedIndex].value;
+            let sodest = selectdest.options[selectdest.selectedIndex].value;
+
+            let obj = { from: soval, to: sodest };           //creating array to store from and to data 
+            total_route.push(obj);
+
+            if(soval=="empty" || sodest=="empty"){        //to not print anything when option is empty
+                return
+            }
+            document.getElementById("demo").innerHTML += soval + " to " + sodest + "<br>";     //to display selected cities 
+
+            selectdest.selectedIndex=0;
+            selectsource.selectedIndex=0;
+        
+            for(let i=0;i<selectsource.length;i++){              //enable all the options in both lists when printing is done
+                selectdest.options[i].disabled=false;
+            selectsource.options[i].disabled=false;
+            }
+        }
+        //   ------------------------------------to clear route lists----------------------------          
+        function clearroute() {
+            document.getElementById("demo").innerHTML = "";
+            location.reload();            //to reload the page
+        }
     </script>
 </body>
-
 </html>
