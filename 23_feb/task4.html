@@ -27,7 +27,6 @@
         <h1>Enter your desired cities</h1>
         <div id="cities">
             <h4 id="from">FROM:</h4>
-<<<<<<< HEAD
             <select id="source" class="route" onchange="disabledest(this);">   <!-- this keyword returns the selected option -->
                 <option value="empty"></option>
             </select>
@@ -35,25 +34,6 @@
             <h4 id="to">TO:</h4>
             <select id="destination" class="route" onchange="disablesource(this);">
                 <option value="empty"></option>
-=======
-            <select id="source" class="route" onchange="disabledest(this);" onmousedown="click();">
-                <option value=""></option>
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Banglore">Banglore</option>
-                <option value="Pune">Pune</option>
-                <option value="Hyderabad">Hyderabad</option>
-            </select>
-
-            <h4 id="to">TO:</h4>
-          <select id="destination" class="route" onchange="disablesource(this);" onmousedown="click();">      <!-- this keyword returns the selected option -->
-                <option value=""></option>
-                <option value="Delhi">Delhi</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Banglore">Banglore</option>
-                <option value="Pune">Pune</option>
-                <option value="Hyderabad">Hyderabad</option>
->>>>>>> 7651d89dcf0eae99585e0bb1fa14ada5e3937cbd
             </select>
 
             <button id="destInput" type="button" onclick="printroute()">Add route</button>
@@ -61,11 +41,6 @@
 
         <p id="demo"></p>
 
-<<<<<<< HEAD
-=======
-<p id="demo"></p>
-
->>>>>>> 7651d89dcf0eae99585e0bb1fa14ada5e3937cbd
         <button type="reset" onclick="clearroute()">Clear Routes...</button>
     </div>
     <!-- ------------------------------------------------------------------------javascript-------------------------------------------------------------------------------  -->
@@ -101,7 +76,6 @@
                     selectdest.options[selectedCity].disabled = "true"; //if index of selected item and j are equal then disable option with j index
                     continue;
                 }
-<<<<<<< HEAD
                 selectdest.options[j].disabled = false;          //enable rest option
             }
              //disabling all destinations with same source (item)
@@ -109,7 +83,7 @@
                 if (total_route[i].from === item.value) {            //if value of current option(item) is equal to from in array (of objects)
                     for(let j=0;j<selectdest.length;j++){        //find the index of the value in destination list
                         if(selectdest.options[j].value === total_route[i].to){            //if value in array and list matches disable the index in list
-                            selectdest.options[j].disabled ="true";
+                            selectdest.options[j].disabled ="true";           //disable the options in list
                         }
                     }
                 }
@@ -119,37 +93,6 @@
         function disablesource(item) {
             let selectedCity = item.selectedIndex;
             for (let j = 0; j < selectsource.options.length; j++) {
-=======
-// --------------------------to disable in source list ------------------------
-                function disablesource(item){
-                    let selectedCity= item.selectedIndex;
-                    for(let j=0;j<selectsource.options.length;j++){
-                        if(j==selectedCity){selectsource.options[selectedCity].disabled="true"; continue;}
-                        selectsource.options[j].disabled=false;
-                    }
-                }
-
-             
-// ----------------------------to display route list --------------------------------- 
-let total_route=[];
-function printroute(){
-    let soval = selectsource.options[selectsource.selectedIndex].value;
-    let sodest = selectdest.options[selectdest.selectedIndex].value;
-
-    //checking through the array if value of source and destination already exsists 
-    for(let i =0;i<total_route.length;i++){
-        if(total_route[i].from === soval && total_route[i].to === sodest ){return}
-    }
-    document.getElementById("demo").innerHTML += soval + " to " +  sodest + "<br>";
-    let obj ={from:soval,to:sodest};           //creating array to store from and to data 
-    total_route.push(obj);
-    
-}
-    //   ------------------------------------to clear route lists----------------------------          
-         function clearroute(){
-            document.getElementById("demo").innerHTML="";
-         }   
->>>>>>> 7651d89dcf0eae99585e0bb1fa14ada5e3937cbd
 
                 if (j == selectedCity) { selectsource.options[selectedCity].disabled = "true"; continue; }
                 selectsource.options[j].disabled = false;
@@ -195,9 +138,4 @@ function printroute(){
         }
     </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-
-</html>
->>>>>>> 7651d89dcf0eae99585e0bb1fa14ada5e3937cbd
