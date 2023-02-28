@@ -3,8 +3,7 @@
 .it does static checking.
 .it is a development tool our code still runs in js.
 .to install- npm install -g typescript.
-. to make corresponding js file use tsc ts_filename.ts
-. tsc is typescript compiler.
 .declaring a variable:  let var_name: type=value;
-.tsc --init on terminal creates a simple typescript config file
-.npm init -y  it creates node package json file to install any node package manager
+.export{} -removes errors in ts if code is running fine in js.
+. it also gives suggestion of variables and functions.
+
