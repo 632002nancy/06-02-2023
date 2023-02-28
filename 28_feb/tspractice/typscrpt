@@ -1,0 +1,6 @@
+.Typescrpt allows js to write in much more precise way to get less errors.
+.It gives type safety.
+.it does static checking.
+.it is a development tool our code still runs in js.
+.to install- npm install -g typescript.
+.declaring a variable:  let var_name: type=value;
