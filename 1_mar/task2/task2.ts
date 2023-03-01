@@ -50,7 +50,7 @@ class Viewers extends Raters {
         super(chnm, chrate, chbud, ratername);
     }
     details() {
-        console.log("Viewers are viewing our cartoons...");
+        console.log("Viewers are viewing our cartoons...");       //method overriding
     }
 
 
