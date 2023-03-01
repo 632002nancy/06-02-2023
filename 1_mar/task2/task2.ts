@@ -18,10 +18,10 @@ abstract class CartoonChannel {
     }
 }
 class Raters extends CartoonChannel {
-          ratername:string;
-    constructor(chnm: string, chrate: number, chbud: number,ratername:string) {      //constructor overloading (polymorphism)
+    ratername: string;
+    constructor(chnm: string, chrate: number, chbud: number, ratername: string) {      //constructor overloading (polymorphism)
         super(chnm, chrate, chbud);
-        this.ratername=ratername;
+        this.ratername = ratername;
     }
     details() {
         console.log("Raters are rating our channels...");
@@ -43,37 +43,37 @@ class Raters extends CartoonChannel {
         }
     }
 
-   
+
 }
-class Viewers extends Raters{
-    constructor(chnm: string, chrate: number, chbud: number,ratername:string) {
-        super(chnm, chrate, chbud,ratername);
+class Viewers extends Raters {
+    constructor(chnm: string, chrate: number, chbud: number, ratername: string) {
+        super(chnm, chrate, chbud, ratername);
     }
     details() {
         console.log("Viewers are viewing our cartoons...");
     }
-    
 
-    dispdetails(chnm: string, chrate: number,chbud?: number){         //method overloding
-        if(chbud){
+
+    dispdetails(chnm: string, chrate: number, chbud?: number) {         //method overloding
+        if (chbud) {
             console.log(`we are watching channel ${chnm} with rating ${chrate} and budget ${chbud}`)
         }
-        else{console.log(`we are watching channel ${chnm} with rating ${chrate}`);}
-        
+        else { console.log(`we are watching channel ${chnm} with rating ${chrate}`); }
+
     }
-   
+
 }
 
-const r = new Raters("pogo", 4.5, 6900000,"sneha");
+const r = new Raters("pogo", 4.5, 6900000, "sneha");
 console.log("CHANNELS:");
 r.details();
 console.log(r.popular(4.5));
 r.channelreviews();
 
-const v=new Viewers("HUNGAMA",4.9,90890000,"preeti");
+const v = new Viewers("HUNGAMA", 4.9, 90890000, "preeti");
 v.details();
-v.dispdetails("cartoonNetworks",4.1);
-v.dispdetails("nick",3.9,8990978);
+v.dispdetails("cartoonNetworks", 4.1);
+v.dispdetails("nick", 3.9, 8990978);
 
 
 //const c=new CartoonChannel("Pogo",4.4,290000000);   //we cant create instance of an abstract class
