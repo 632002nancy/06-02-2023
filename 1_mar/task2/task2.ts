@@ -1,41 +1,41 @@
 //we are applying abstraction using abstract class bcz defining public and private is not possible in interface or types 
 
 abstract class CartoonChannel {
-    channelname: string;
-    protected channelrating: number;
-    private channelbudget: number;      //we cant access it outside the class so to get its value we can use setter and getter function
+    channelName: string;
+    protected channelRating: number;
+    private channelBudget: number;      //we cant access it outside the class so to get its value we can use setter and getter function
 
-    constructor(chnm: string, chrate: number, chbud: number) {
-        this.channelname = chnm;
-        this.channelrating = chrate;
-        this.channelbudget = chbud;
+    constructor(chnlName: string, chnlRate: number, chnlBud: number) {
+        this.channelName = chnlName;
+        this.channelRating = chnlRate;
+        this.channelBudget = chnlBud;
     }
 
-    public abstract channelreviews(): void;   //abstract method
+    public abstract channelReviews(): void;   //abstract method
 
-    public get chanelbud() {
-        return this.channelbudget;
+    public get chanelBud() {
+        return this.channelBudget;
     }
 }
 class Raters extends CartoonChannel {
-    ratername: string;
-    constructor(chnm: string, chrate: number, chbud: number, ratername: string) {      //constructor overloading (polymorphism)
-        super(chnm, chrate, chbud);
-        this.ratername = ratername;
+    raterName: string;
+    constructor(chnlName: string, chnlRate: number, chnlBud: number, raterName: string) {      //constructor overloading (polymorphism)
+        super(chnlName, chnlRate, chnlBud);
+        this.raterName = raterName;
     }
     details() {
         console.log("Raters are rating our channels...");
     }
-    public channelreviews(): void {
-        if (this.channelrating >= 4) {
-            console.log(`The channel ${this.channelname} is toping in charts with ratings ${this.channelrating} with budget ${super.chanelbud}, review by ${this.ratername}`);
+    public channelReviews(): void {                //need to implement abstract method of abstract class
+        if (this.channelRating >= 4) {
+            console.log(`The channel ${this.channelName} is toping in charts with ratings ${this.channelRating} with budget ${this.chanelBud}, review by ${this.raterName}`);
         }
         else {
-            console.log(`The channel ${this.channelname} is not doing great in charts with ratings ${this.channelrating} with budget ${super.chanelbud}, review by ${this.ratername}`);
+            console.log(`The channel ${this.channelName} is not doing great in charts with ratings ${this.channelRating} with budget ${this.chanelBud}, review by ${this.raterName}`);
         }
     }
-    popular(channelrating: number): string {
-        if (channelrating >= 4) {
+    popular(channelRating: number): string {
+        if (channelRating >= 4) {
             return "top in charts";
         }
         else {
@@ -46,34 +46,34 @@ class Raters extends CartoonChannel {
 
 }
 class Viewers extends Raters {
-    constructor(chnm: string, chrate: number, chbud: number, ratername: string) {
-        super(chnm, chrate, chbud, ratername);
+    constructor(chnlNm: string, chnlRate: number, chnlBud: number, raterName: string) {
+        super(chnlNm, chnlRate, chnlBud, raterName);
     }
     details() {
         console.log("Viewers are viewing our cartoons...");       //method overriding
     }
 
 
-    dispdetails(chnm: string, chrate: number, chbud?: number) {         //method overloding
-        if (chbud) {
-            console.log(`we are watching channel ${chnm} with rating ${chrate} and budget ${chbud}`)
+    displayDetailsOfViewers(chnlNm: string, chnlRate: number, chnlBud?: number) {         //method overloding
+        if (chnlBud) {
+            console.log(`we are watching channel ${chnlNm} with rating ${chnlRate} and budget ${chnlBud}`)
         }
-        else { console.log(`we are watching channel ${chnm} with rating ${chrate}`); }
+        else { console.log(`we are watching channel ${chnlNm} with rating ${chnlRate}`); }
 
     }
 
 }
 
-const r = new Raters("pogo", 4.5, 6900000, "sneha");
 console.log("CHANNELS:");
+const r = new Raters("pogo", 4.5, 6900000, "sneha");
 r.details();
 console.log(r.popular(4.5));
-r.channelreviews();
+r.channelReviews();
 
 const v = new Viewers("HUNGAMA", 4.9, 90890000, "preeti");
 v.details();
-v.dispdetails("cartoonNetworks", 4.1);
-v.dispdetails("nick", 3.9, 8990978);
+v.displayDetailsOfViewers("cartoonNetworks", 4.1);
+v.displayDetailsOfViewers("nick", 3.9, 8990978);
 
 
 //const c=new CartoonChannel("Pogo",4.4,290000000);   //we cant create instance of an abstract class

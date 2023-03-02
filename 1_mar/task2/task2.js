@@ -1,32 +1,32 @@
 //we are applying abstraction using abstract class bcz defining public and private is not possible in interface or types 
 class CartoonChannel {
-    constructor(chnm, chrate, chbud) {
-        this.channelname = chnm;
-        this.channelrating = chrate;
-        this.channelbudget = chbud;
+    constructor(chnlName, chnlRate, chnlBud) {
+        this.channelName = chnlName;
+        this.channelRating = chnlRate;
+        this.channelBudget = chnlBud;
     }
-    get chanelbud() {
-        return this.channelbudget;
+    get chanelBud() {
+        return this.channelBudget;
     }
 }
 class Raters extends CartoonChannel {
-    constructor(chnm, chrate, chbud, ratername) {
-        super(chnm, chrate, chbud);
-        this.ratername = ratername;
+    constructor(chnlName, chnlRate, chnlBud, raterName) {
+        super(chnlName, chnlRate, chnlBud);
+        this.raterName = raterName;
     }
     details() {
         console.log("Raters are rating our channels...");
     }
-    channelreviews() {
-        if (this.channelrating >= 4) {
-            console.log(`The channel ${this.channelname} is toping in charts with ratings ${this.channelrating} with budget ${super.chanelbud}, review by ${this.ratername}`);
+    channelReviews() {
+        if (this.channelRating >= 4) {
+            console.log(`The channel ${this.channelName} is toping in charts with ratings ${this.channelRating} with budget ${this.chanelBud}, review by ${this.raterName}`);
         }
         else {
-            console.log(`The channel ${this.channelname} is not doing great in charts with ratings ${this.channelrating} with budget ${super.chanelbud}, review by ${this.ratername}`);
+            console.log(`The channel ${this.channelName} is not doing great in charts with ratings ${this.channelRating} with budget ${this.chanelBud}, review by ${this.raterName}`);
         }
     }
-    popular(channelrating) {
-        if (channelrating >= 4) {
+    popular(channelRating) {
+        if (channelRating >= 4) {
             return "top in charts";
         }
         else {
@@ -35,28 +35,28 @@ class Raters extends CartoonChannel {
     }
 }
 class Viewers extends Raters {
-    constructor(chnm, chrate, chbud, ratername) {
-        super(chnm, chrate, chbud, ratername);
+    constructor(chnlNm, chnlRate, chnlBud, raterName) {
+        super(chnlNm, chnlRate, chnlBud, raterName);
     }
     details() {
-        console.log("Viewers are viewing our cartoons...");
+        console.log("Viewers are viewing our cartoons..."); //method overriding
     }
-    dispdetails(chnm, chrate, chbud) {
-        if (chbud) {
-            console.log(`we are watching channel ${chnm} with rating ${chrate} and budget ${chbud}`);
+    displayDetailsOfViewers(chnlNm, chnlRate, chnlBud) {
+        if (chnlBud) {
+            console.log(`we are watching channel ${chnlNm} with rating ${chnlRate} and budget ${chnlBud}`);
         }
         else {
-            console.log(`we are watching channel ${chnm} with rating ${chrate}`);
+            console.log(`we are watching channel ${chnlNm} with rating ${chnlRate}`);
         }
     }
 }
-const r = new Raters("pogo", 4.5, 6900000, "sneha");
 console.log("CHANNELS:");
+const r = new Raters("pogo", 4.5, 6900000, "sneha");
 r.details();
 console.log(r.popular(4.5));
-r.channelreviews();
+r.channelReviews();
 const v = new Viewers("HUNGAMA", 4.9, 90890000, "preeti");
 v.details();
-v.dispdetails("cartoonNetworks", 4.1);
-v.dispdetails("nick", 3.9, 8990978);
+v.displayDetailsOfViewers("cartoonNetworks", 4.1);
+v.displayDetailsOfViewers("nick", 3.9, 8990978);
 //const c=new CartoonChannel("Pogo",4.4,290000000);   //we cant create instance of an abstract class
