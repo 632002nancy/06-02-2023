@@ -54,8 +54,8 @@ function confirmBooking() {
         tableslot.options[i].disabled = false;
     }
 
-    let allDetails=document.getElementById("allCustDetail");
-    allDetails.innerHTML+="Time Slot: "+tablesBooked[tablesBooked.length-1].Time +  "  ->  "+"Table NO." +tablesBooked[tablesBooked.length-1].bookedTable+'<br>';
+    let allDetails = document.getElementById("allCustDetail");
+    allDetails.innerHTML += "Time Slot: " + tablesBooked[tablesBooked.length - 1].Time + "     Table NO.:" + tablesBooked[tablesBooked.length - 1].bookedTable + "     Booking ID:"+bookId + '<br>';
 }
 
 function cancelBooking() {
