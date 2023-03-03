@@ -47,12 +47,15 @@ function confirmBooking() {
     timeslot.selectedIndex = 0;
     tableslot.selectedIndex = 0;
 
-    document.getElementById("details").innerHTML = "WELCOME!!!" + customerName() + " your table " + selectedTableSlot + " is booked for timings " + selectedTimeSlot + " AND YOUR BOOKING ID IS:" + bookId;
+    document.getElementById("details").innerHTML = "WELCOME!!!" + customerName() + " your table " + selectedTableSlot + " is booked for timings " + selectedTimeSlot + " AND YOUR BOOKING ID IS:" + bookId + '<br>';
 
     for (let i = 0; i < timeslot.length; i++) {              //enable all the options in both lists when printing is done
         timeslot.options[i].disabled = false;
         tableslot.options[i].disabled = false;
     }
+
+    let allDetails=document.getElementById("allCustDetail");
+    allDetails.innerHTML+="Time Slot: "+tablesBooked[tablesBooked.length-1].Time +  "  ->  "+"Table NO." +tablesBooked[tablesBooked.length-1].bookedTable+'<br>';
 }
 
 function cancelBooking() {
@@ -64,4 +67,6 @@ function cancelBooking() {
         }
     }
 }
+
+
 

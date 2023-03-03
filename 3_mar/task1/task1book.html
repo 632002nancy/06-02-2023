@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body style="background-color: rgb(230, 236, 206);">
+<body style="background-color: rgb(230, 236, 206);" style="display: flex;">
 
     <div style="display:flex; flex-direction:column; align-items: center; justify-content: center;">
         <div style="margin-top: 8rem;">
@@ -43,11 +43,19 @@
         </select>
 
         <button type="submit" style="margin-top: 2rem;" onclick="confirmBooking()">Confirm Booking</button>
+        <p id="details"></p>
+
         <input type="text" id="cancelID" placeholder="Enter BookingID"  style="margin-top: 2rem;">
         <button type="submit" onclick="cancelBooking()">Cancel Booking</button>
-
         <p id="cancelBook"></p>
-        <p id="details"></p>
+
+        
+        <div style="background-color: rgb(76, 119, 13); color: white;" id="allDetail">
+            <h2>Details of Pre-Booked tables with their Time-Slots:</h2>
+            <p id="allCustDetail" style="text-align: center;"></p>
+        </div>
+
+        
     </div>
 </body>
 
