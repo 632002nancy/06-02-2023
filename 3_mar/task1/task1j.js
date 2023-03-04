@@ -30,40 +30,52 @@ function newBooking(time) {
         }
     }
 }
-let nAME = customerName();
+let memberNAME=document.getElementById("membersName").value;
 function confirmBooking() {
     const selectedTimeSlot = timeslot.options[timeslot.selectedIndex].value;
     const selectedTableSlot = tableslot.options[tableslot.selectedIndex].value;
-
-    var bookId = Math.floor(Math.random() * (700 - 60 + 1)) + 60;
-
-    const obj = { Time: selectedTimeSlot, bookedTable: selectedTableSlot, bookID: bookId };
-    tablesBooked.push(obj);
-    console.log(tablesBooked);
-    localStorage.setItem(nAME, JSON.stringify(obj));
-    let a = JSON.parse(localStorage.getItem(nAME));
-    console.log(a);
-
-    timeslot.selectedIndex = 0;
-    tableslot.selectedIndex = 0;
-
-    document.getElementById("details").innerHTML = "WELCOME!!!" + customerName() + " your table " + selectedTableSlot + " is booked for timings " + selectedTimeSlot + " AND YOUR BOOKING ID IS:" + bookId + '<br>';
-
-    for (let i = 0; i < timeslot.length; i++) {              //enable all the options in both lists when printing is done
-        timeslot.options[i].disabled = false;
-        tableslot.options[i].disabled = false;
+     
+    if(memberNAME===customerName()){
+        alert("please fill and submit  your NAME !!!");
+        return;
     }
-
-    let allDetails = document.getElementById("allCustDetail");
-    allDetails.innerHTML += "Time Slot: " + tablesBooked[tablesBooked.length - 1].Time + "     Table NO.:" + tablesBooked[tablesBooked.length - 1].bookedTable + "     Booking ID:"+bookId + '<br>';
-}
+    else if(selectedTimeSlot==="empty"){
+        alert("please fill TIME-SLOT!!!");
+        return;
+    }
+    else if(selectedTableSlot==="empty"){
+        alert("please fill TABLE number!!!");
+        return;
+    }
+    else{
+        var bookId = Math.floor(Math.random() * (700 - 60 + 1)) + 60;
+        const obj = { Time: selectedTimeSlot, bookedTable: selectedTableSlot, bookID: bookId };
+        tablesBooked.push(obj);
+        
+        localStorage.setItem(customerName(), JSON.stringify(obj));
+        let a = JSON.parse(localStorage.getItem(customerName()));
+       
+        timeslot.selectedIndex = 0;
+        tableslot.selectedIndex = 0;
+    
+        document.getElementById("details").innerHTML = "WELCOME!!!" + customerName() + " your table " + selectedTableSlot + " is booked for timings " + selectedTimeSlot + " AND YOUR BOOKING ID IS:" + bookId + '<br>';
+    
+        for (let i = 0; i < timeslot.length; i++) {              //enable all the options in both lists when printing is done
+            timeslot.options[i].disabled = false;
+            tableslot.options[i].disabled = false;
+        }
+        memberNAME.value="";
+        let allDetails = document.getElementById("allCustDetail");
+        allDetails.innerHTML += "Time Slot: " + tablesBooked[tablesBooked.length - 1].Time + "     Table NO.:" + tablesBooked[tablesBooked.length - 1].bookedTable + "     Booking ID:"+bookId + '<br>';
+    }
+    }
 
 function cancelBooking() {
     let cancelid = document.getElementById("cancelID").value;
-    for (let i in tablesBooked) {
+    for (let i=0;i< tablesBooked;i++) {
         if (tablesBooked[i].bookID === cancelid) {
             tablesBooked.splice(i, 1);
-            localStorage.removeItem(nAME);
+            localStorage.removeItem(customerName());
         }
     }
 }

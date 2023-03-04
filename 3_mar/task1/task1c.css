@@ -1,27 +1,62 @@
 body{
-    background-color: rgb(230, 236, 206);
-}
-
-nav{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    background-color: rgb(244, 181, 97);
 }
-
-nav ul{
+/* -------------------------navigation bar------------------------ */
+#navbar{
+   width: 110%;                
+   margin-left: -8px; /* to get the light portion throughout the body*/
+   margin-right: -8px;
+   position:fixed;
+}
+#navbar::before {
+    content: "";
+    background-color:transparent;
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+#navbar ul{
     display: flex;
-    list-style: none;
+    margin: 10px;
+    list-style-type: none;
 }
-nav ul li a{
+#navbar ul li{
+    padding: 15px;
+}
+#navbar ul li a{
     color: black;
-    margin: 2rem;
-    font-size: 1.5rem;
     text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 1px 2px 2px black;
+    padding: 2rem;
 }
 
-nav ul li a:hover{
-    background-color: rgb(248, 252, 197);
-    /* font-size: 2rem; */
+#navbar ul li a:hover{
     padding: 1rem;
     border-radius: 5rem;
 }
+#home::before {
+    content: "";
+    background: url('https://im1.dineout.co.in/images/uploads/restaurant/sharpen/2/y/t/p242-164682133162287fd3338dd.jpg?tr=tr:n-medium')no-repeat center center/cover;
+
+    position: absolute;
+    top: 0px;
+    height: 200%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+.design{
+    border:1px solid black;
+    border-radius: 2rem;
+    padding: 0.23rem;
+}
+h2{
+    text-shadow: 4px 3px 8px black;
+}
+

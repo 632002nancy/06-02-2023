@@ -11,14 +11,57 @@
 </head>
 
 <body>
-    <nav>
+
+    <nav id="navbar" class="nav1">
         <ul>
-            <li><a href="task1book.html" target="_blank">Book Tables</a></li>
+            <li><a href="#home" target="_blank">Book Tables</a></li>
             <li><a href="https://www.zomato.com/india" target="_blank">Menu</a></li>
-            <li><a href="https://restaurant-guru.in/contactus" target="_blank">Contact Us</a></li>
-            <li><a href="https://www.britannica.com/topic/restaurant" target="_blank">About Us</a></li>
+            <li><a href="#allDetail" target="_blank">Details Of Pre-booking</a></li>
+            <li><a href="#cancelID" target="_blank">Cancel Booking</a></li>
         </ul>
     </nav>
+    <div id="home" style="display:flex; flex-direction:column; align-items: center; justify-content: center;">
+        
+        <div style="margin-top: 8rem;">
+            <h2> Enter Name of Customer:</h2>
+            <input type="text" class="design" id="membersName" onclick="customerName();"required>
+            <button type="submit" class="design" >Submit</button>
+
+        <h2>Please Select Time Slot:</h2>
+        <select name="timeSlot" id="timeSlot" class="design" onchange="newBooking(this);">
+            <option value="empty"></option>
+            <option value="12 a.m. - 1 p.m.">12 a.m. - 1 p.m.</option>
+            <option value="1 p.m. - 3 p.m.">1 p.m. - 3 p.m.</option>
+            <option value="3 p.m. - 5 p.m.">3 p.m. - 5 p.m.</option>
+            <option value="5 p.m. - 7 p.m.">5 p.m. - 7 p.m.</option>
+            <option value="7 p.m. - 9 p.m.">7 p.m. - 9 p.m.</option>
+        </select>
+
+        <h2 style="margin-top: 7rem; ">Please Select Table:</h2>
+        <select name="tableSlot" class="design" id="tableSlot" style="margin-bottom: 6rem;">
+            <option value="empty"></option>
+            <option value="1">Table 1</option>
+            <option value="2">Table 2</option>
+            <option value="3">Table 3</option>
+            <option value="4">Table 4</option>
+            <option value="5">Table 5</option>
+        </select>
+
+        <button type="submit" style="margin-top: 2rem;" class="design" onclick="confirmBooking()">Confirm Booking</button>
+        <p id="details" style="color:white;"></p>
+
+        <input type="text" id="cancelID" class="design"placeholder="Enter BookingID"  style="margin-top: 2rem;">
+        <button type="submit" class="design" onclick="cancelBooking()">Cancel Booking</button>
+        <p id="cancelBook"></p>
+
+        
+        <div style="color: black;" id="allDetail">
+            <h2>Details of Pre-Booked tables with their Time-Slots:</h2>
+            <p id="allCustDetail" style="text-align: center; color: white;"></p>
+        </div>
+
+        
+    </div>
 </body>
 
 </html>
