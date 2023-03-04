@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="task1j.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(230, 236, 206);" style="display: flex;">
+
+    <div style="display:flex; flex-direction:column; align-items: center; justify-content: center;">
+        <div style="margin-top: 8rem;">
+            <h2> Enter Name of Customer:</h2>
+            <input type="text" id="membersName">
+            <button type="submit" onclick="customerName()">Submit</button>
+
+            <h2> Enter Number of Members:</h2>
+            <input type="number" id="members" max="8" placeholder="Maximum 8 members">
+            <button type="submit" onclick="customerMembers()">Submit</button>
+        </div>
+
+        <h2>Please Select Time Slot:</h2>
+        <select name="timeSlot" id="timeSlot" onchange="newBooking(this);">
+            <option value=""></option>
+            <option value="12 a.m. - 1 p.m.">12 a.m. - 1 p.m.</option>
+            <option value="1 p.m. - 3 p.m.">1 p.m. - 3 p.m.</option>
+            <option value="3 p.m. - 5 p.m.">3 p.m. - 5 p.m.</option>
+            <option value="5 p.m. - 7 p.m.">5 p.m. - 7 p.m.</option>
+            <option value="7 p.m. - 9 p.m.">7 p.m. - 9 p.m.</option>
+        </select>
+
+        <h2 style="margin-top: 7rem; ">Please Select Table:</h2>
+        <select name="tableSlot" id="tableSlot" style="margin-bottom: 6rem;">
+            <option value=""></option>
+            <option value="1">Table 1</option>
+            <option value="2">Table 2</option>
+            <option value="3">Table 3</option>
+            <option value="4">Table 4</option>
+            <option value="5">Table 5</option>
+        </select>
+
+        <button type="submit" style="margin-top: 2rem;" onclick="confirmBooking()">Confirm Booking</button>
+        <p id="details"></p>
+
+        <input type="text" id="cancelID" placeholder="Enter BookingID"  style="margin-top: 2rem;">
+        <button type="submit" onclick="cancelBooking()">Cancel Booking</button>
+        <p id="cancelBook"></p>
+
+        
+        <div style="background-color: rgb(76, 119, 13); color: white;" id="allDetail">
+            <h2>Details of Pre-Booked tables with their Time-Slots:</h2>
+            <p id="allCustDetail" style="text-align: center;"></p>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>
