@@ -70,15 +70,6 @@ function confirmBooking() {
     }
     }
 
-function cancelBooking() {
-    let cancelid = document.getElementById("cancelID").value;
-    for (let i=0;i< tablesBooked;i++) {
-        if (tablesBooked[i].bookID === cancelid) {
-            tablesBooked.splice(i, 1);
-            localStorage.removeItem(customerName());
-        }
-    }
-}
 
 
 
