@@ -71,16 +71,3 @@ function confirmBooking() {
   }
 }
 
-function cancelBooking() {
-  let cancelid = document.getElementById("cancelID").value;
-  console.log("inside function");
-  for (let i = 0; i < tablesBooked; i++) {
-    console.log("inside for");
-    if (tablesBooked[i].bookID === cancelid) {
-        console.log("inside if");
-      tablesBooked.splice(i, 1);
-      console.log(tablesBooked);
-      localStorage.removeItem(customerName());
-    }
-  }
-}
