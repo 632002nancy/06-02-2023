@@ -57,6 +57,7 @@ function confirmBooking() {
     timeslot.selectedIndex = 0;
     tableslot.selectedIndex = 0;
 
+    document.getElementById("details").style.color="black";
     document.getElementById("details").innerHTML ="WELCOME!!!" + customerName() + " your table " +selectedTableSlot +" is booked for timings " +selectedTimeSlot +" AND YOUR BOOKING ID IS:" +bookId +"<br>";
 
     for (let i = 0; i < timeslot.length; i++) {
@@ -66,8 +67,8 @@ function confirmBooking() {
     }
     memberNAME.value = "";
     let allDetails = document.getElementById("allCustDetail");
+    allDetails.style.color="black";
     allDetails.innerHTML += "Time Slot: " + tablesBooked[tablesBooked.length - 1].Time + "     Table NO.:" + tablesBooked[tablesBooked.length - 1].bookedTable + "     Booking ID:"+bookId + '<br>';
-   
   }
 }
 
