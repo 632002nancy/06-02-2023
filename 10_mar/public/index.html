@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav id="navbar" class="nav1">
+        <ul>
+            <li><a href="#home" target="_blank">Book Tables</a></li>
+            <li><a href="https://www.zomato.com/india" target="_blank">Menu</a></li>
+            <li><a href="#allDetail" target="_blank">Details Of Pre-booking</a></li>
+            <li><a href="#cancelID" target="_blank">Cancel Booking</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="home" style="display:flex; flex-direction:column; align-items: center; justify-content: center;">
+        <div style="margin-top: 8rem;">
+<!-- -----------------------------create ----------------------------------  -->
+            <form action="/details" method="post">
+                <input type="text" class="design" id="membersName" name="customerName" placeholder="Enter your name"
+                    required>
+                <input type="number" class="design" id="phno" name="_id" placeholder="Phone Number">
+
+                <select name="timeSlot" id="timeSlot" class="design" onchange="newBooking(this);">
+                    <option value="empty"></option>
+                    <option value="12 a.m. - 1 p.m.">12 a.m. - 1 p.m.</option>
+                    <option value="1 p.m. - 3 p.m.">1 p.m. - 3 p.m.</option>
+                    <option value="3 p.m. - 5 p.m.">3 p.m. - 5 p.m.</option>
+                    <option value="5 p.m. - 7 p.m.">5 p.m. - 7 p.m.</option>
+                    <option value="7 p.m. - 9 p.m.">7 p.m. - 9 p.m.</option>
+                </select>
+
+                <select name="tableNumber" class="design" id="tableSlot" style="margin-bottom: 6rem; display: none;">
+                    <option value="empty"></option>
+                    <option value="1">Table 1</option>
+                    <option value="2">Table 2</option>
+                    <option value="3">Table 3</option>
+                    <option value="4">Table 4</option>
+                    <option value="5">Table 5</option>
+                </select>
+
+                <button type="submit" style="margin-top: 2rem;" class="design" onclick="confirmBooking()">Confirm
+                    Booking</button>
+            </form>
+        </div>
+        <p id="details" style="color:white;"></p>
+<!-- -------------------------read-------------------------- -->
+        <button type="submit" style=" padding-left: 4rem; padding-right: 4rem;" onclick="allDetails()"
+            class="design">See All Details</button>
+        <div style="color: white;" id="allDetail">
+            <h2 id="bookingDetails" style="display: none;">Details of Pre-Booked tables with their Time-Slots:</h2>
+            <p id="allCustDetail" style="text-align: center; color: black; display: none;"></p>
+        </div>
+<!-- --------------------------delete-------------------------- -->
+        <form action="/delete" method="post">
+            <input type="number" class="design" name="_id" placeholder="Phone Number">
+            <button type="submit" style="margin-top: 2rem;" class="design">Cancel Booking</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
