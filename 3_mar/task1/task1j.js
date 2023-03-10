@@ -53,7 +53,7 @@ function confirmBooking() {
 
     localStorage.setItem(customerName(), JSON.stringify(obj)); //it converts the obj into string
     let a = JSON.parse(localStorage.getItem(customerName())); //it converts the string into object and saveit to key value pair in  local storage for this we need to make sure that our string is in json format or else we get error
-
+    
     timeslot.selectedIndex = 0;
     tableslot.selectedIndex = 0;
 
@@ -68,7 +68,11 @@ function confirmBooking() {
     memberNAME.value = "";
     let allDetails = document.getElementById("allCustDetail");
     allDetails.style.color="black";
-    allDetails.innerHTML += "Time Slot: " + tablesBooked[tablesBooked.length - 1].Time + "     Table NO.:" + tablesBooked[tablesBooked.length - 1].bookedTable + "     Booking ID:"+bookId + '<br>';
+    for(let j=0;j<localStorage.length;j++){
+      console.log(localStorage.length);
+      console.log(localStorage[j]);
+      allDetails.innerHTML += "Time Slot: " + localStorage[j].Time + "     Table NO.:" + localstorage[j].bookedTable + "     Booking ID:"+bookId + '<br>';
+    }
   }
 }
 
