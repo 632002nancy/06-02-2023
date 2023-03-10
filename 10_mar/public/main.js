@@ -19,14 +19,8 @@ const newBooking = async (select) => {
   }
   for (let i = 0; i < data.length; i++) {
     if (data[i].timeSlot === selectedTimeValue) {
-      console.log(data[i].timeSlot);
-      console.log(selectedTimeValue);
       for (let j = 0; j < tableslot.length; j++) {
-        console.log("gchjds")
-        console.log(tableslot.options[j].value);
-          console.log(data[i].tableNumber)
-        if (tableslot.options[j].value === data[i].tableNumber) {
-          console.log("inside");
+        if (tableslot.options[j].value == data[i].tableNumber) {
           tableslot.options[j].disabled = true;
         } 
       }
