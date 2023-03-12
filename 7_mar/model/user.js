@@ -1,10 +1,8 @@
 //building the Schema using the schema class in the mongoose 
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
 // creating the schema for the user 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,

@@ -2,7 +2,7 @@ const customer = require("../model/restaurant-model");
 
 
 //----------------------------performing create option and checking if the data already present or not
-const showDetails = async (req, res, next) => {
+const addDetails = async (req, res, next) => {
     console.log(req);
     const { customerName, tableNumber, timeSlot, _id } = req.body;  
     let data;
@@ -24,13 +24,13 @@ const deleteDetails = async (req, res, next) => {
 }
 
 // reading the data from the database 
-const getDetails=async(req,res,next)=>{
+const showDetails=async(req,res,next)=>{
     let data;
     data=await customer.find();
     res.status(200).json({data});
 }
 
 
-exports.showDetails = showDetails;
+exports.addDetails = addDetails;
 exports.deleteDetails = deleteDetails;
-exports.getDetails = getDetails;
+exports.showDetails = showDetails;

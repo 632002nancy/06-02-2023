@@ -1,6 +1,5 @@
 const User = require("../model/user")
 
-
 // all the database methods are fetched and used under async and await 
 // creating the READ user operation on database
 const getAllUSers = async(req,res,next)=>{

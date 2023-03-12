@@ -8,18 +8,20 @@
     <title>Student</title>
 </head>
 
+<!-- view folder is created when we want dynamic data -->
+
 <body>
     <!-- Note: the name property of input is used in the backend part in creating the student schema   -->
     <div class="studentdetails">
         <form action="/create" method="post">
             <label>Full Name</label>
-            <input type="text" placeholder="Enter Full Name" name="student_name" required>
+            <input type="text" name="student_name" required>
             <label>Roll No</label>
-            <input type="number" placeholder="Enter Roll No" name="roll_no" required>
+            <input type="number" name="roll_no" required>
             <label>Class/Section</label>
-            <input type="text" placeholder="Enter the Class" name="class_section" required>
+            <input type="text" name="class_section" required>
             <label>Subjects</label>
-            <input type="text" placeholder="Add Subjects" name="subjects" required>
+            <input type="text" name="subjects" required>
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -32,21 +34,24 @@
 
     <div class="updatedetails">
         <form action="/updateData" method="post">
+            <h4>Update details</h4>
             <label>Full Name</label>
-            <input type="text" placeholder="Updated Full Name" name="name" required>
+            <input type="text" name="name" required>
             <label>Roll No</label>
-            <input type="number" placeholder="Enter Roll No" name="roll_no" required>
+            <input type="number" name="roll_no" required>
             <label>Class/Section</label>
-            <input type="text" placeholder="Update the Class" name="class_section" required>
+            <input type="text" name="class_section" required>
             <label>Subjects</label>
-            <input type="text" placeholder="Updated Subjects" name="subject" required>
-            <button>Update Student Data</button>
+            <input type="text" name="subject" required>
+            <button>Update Data</button>
         </form>
     </div>
 
     <div class="getdetails">
         <form action="/deleteData" method="post">
-            <input type="number" placeholder="Enter Roll No" name="roll_no" required>
+            <br>
+            <h4>Delete data</h4>
+            <input type="number" name="roll_no" required>
             <button>Delete Student Data</button>
         </form>
     </div>

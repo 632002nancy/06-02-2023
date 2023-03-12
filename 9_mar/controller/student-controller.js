@@ -1,12 +1,12 @@
 // defining the controller methods
 const student = require("../model/student-model.js");
 
-const displayForm = (req, res) => {
-  res.render("student-form");
+const displayForm = (req, res) => {  //used in template engine (views) when working with template engine we use render instead of send 
+  res.render("student-form");   //render student form on the page
 };
 
 // adding a new student to database
-const add_Student = async (req, res, next) => {
+const addStudent = async (req, res, next) => {
   console.log(req);
   const { student_name, roll_no, class_section, subjects } = req.body;
 
@@ -27,7 +27,6 @@ const add_Student = async (req, res, next) => {
       class_section,
       subjects,
     });
-    console.log(studentData);
     studentData = await studentData.save();
   } catch (err) {
     return next(err);
@@ -44,8 +43,8 @@ const add_Student = async (req, res, next) => {
 const getStudents = async (req, res, next) => {
   let data;
   data = await student.find();
-  if (!data) {
-    return res.status(422).json({ message: "no records found " });
+  if (!data) {    //giving validation
+    return res.status(422).json({ message: "no records found " });  
   }
 
   return res.status(200).json({ data });
@@ -53,9 +52,7 @@ const getStudents = async (req, res, next) => {
 
 // update the student according to the roll no
 const updateStudent = async (req, res) => {
-  console.log(req);
   let { student_name, roll_no, class_section, subjects } = req.body;
-  console.log(roll_no);
   if (
     student_name?.trim() === "" &&
     isNaN(roll_no) &&
@@ -69,21 +66,18 @@ const updateStudent = async (req, res) => {
     { roll_no: roll_no },
     { student_name, roll_no, class_section, subjects }
   );
-  console.log(updated);
-  return res.status(200).json({ updated });
+    return res.status(200).json({ updated });
 };
 
 //delete the student according to the roll number
 const deleteStudent = async (req, res) => {
   let { roll_no } = req.body;
-  console.log(roll_no);
   let deleted;
   deleted = await student.deleteOne({ roll_no: roll_no });
-  console.log(deleted);
   return res.status(200).json({ message: "deleted successfully " });
 };
 
-exports.add_Student = add_Student;
+exports.addStudent = addStudent;
 exports.displayForm = displayForm;
 exports.getStudents = getStudents;
 exports.updateStudent = updateStudent;

@@ -1,7 +1,6 @@
 // creating the model/ schema for the student 
-const mongoose = require("mongoose");
-let Schema = mongoose.Schema;
-let studentSchema = new Schema({
+const mongoose = require("mongoose"); //to connect mongodb with express in less code
+let studentSchema = new mongoose.Schema({    //schema is used to describe the structure of data in mongo 
     student_name:{
         type:String,
         required:true
@@ -19,4 +18,4 @@ let studentSchema = new Schema({
     }
 });
 
-module.exports= mongoose.model("student",studentSchema);
+module.exports= mongoose.model("student",studentSchema);  // creating collection in mongoose using model
