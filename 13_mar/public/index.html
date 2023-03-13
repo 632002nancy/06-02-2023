@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+
+<!-- view folder is created when we want dynamic data -->
+
+<body>
+    <!-- Note: the name property of input is used in the backend part in creating the student schema   -->
+    <div class="studentdetails">
+        <form action="/addStudent" method="post">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+            <label>Email</label>
+            <input type="text" name="email" required>
+            <label>Password</label>
+            <input type="text" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="getdetails">
+        <form action="/getAllStudents" method="get">
+            <button>See All Students</button>
+        </form>
+    </div>
+
+    <!-- <div class="getOnedetail">
+        <form action="/getOneStudent" method="get">
+            <label>Email</label>
+            <input type="text" name="email" required>
+            <button>See One Student Details</button>
+        </form>
+    </div> -->
+
+    <div class="updatedetails">
+        <form action="/updateStudent" method="post">
+            <h4>Update details</h4>
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+            <label>Email</label>
+            <input type="text" name="email" required>
+            <label>Password</label>
+            <input type="text" name="password" required>
+            <button>Update Data</button>
+        </form>
+    </div>
+
+    <div class="getdetails">
+        <form action="/deleteStudent" method="post">
+            <br>
+            <h4>Delete data</h4>
+            <input type="text" name="email" required>
+            <button>Delete Student Data</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ const addDetails = async (req, res, next) => {
             _id,
         });
         data = await data.save();   
-    res.status(200).json({ data });
+   return res.status(200).json({ data });
 }
 // deleting the data from the database 
 const deleteDetails = async (req, res, next) => {
