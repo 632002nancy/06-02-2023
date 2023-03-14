@@ -4,9 +4,8 @@ const { addStudent, getAllStudents, deleteStudent,updateStudent}= require("../co
     
 const router = express.Router();
 
-router.post('/addStudent', addStudent);
-router.get('/getAllStudents', getAllStudents);
-//router.get('/getOneStudent', getOneStudent);
+ router.post('/addStudent', addStudent);
+ router.get('/getAllStudents', getAllStudents);
  router.post('/updateStudent', updateStudent);
  router.post('/deleteStudent', deleteStudent);
 
