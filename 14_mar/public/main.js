@@ -67,6 +67,7 @@ function confirmBooking() {
 // ----------------------------------------------using sql------------------------------------------- 
 //read(displaying data on html)
 const allDetails = async (p) => {
+  document.getElementById("allCustDetail").innerHTML="";
   document.getElementById("bookingDetails").style.display = "block";
   document.getElementById("allCustDetail").style.display = "block";
   const response = await fetch("http://localhost:2020/showDetails");
