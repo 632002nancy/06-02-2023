@@ -1,8 +1,6 @@
 const db = require("../model");
 
-const Customer = db.customers;
-
-
+const Customer = db.customers;   //creating main model
 //1. create customer data (create)
 const addCustomer =  (req, res) => {
     let customerData = {
@@ -17,8 +15,6 @@ const addCustomer =  (req, res) => {
     .catch(err=>{
         res.status(500).send({message:`${err}`});
     })
-
-
 }
 
 //2. get details of all customers (read)
@@ -30,7 +26,6 @@ const showDetails =(req,res)=>{
     .catch(err=>{
         return res.status(422).json({ message: `${err}` })
     })
-   
 }
 
 //3. delete data of one customer
@@ -44,7 +39,6 @@ const deleteCustomer = (req, res) => {
         return res.status(500).json({message:`${err}`})
      })
 }
-
 
 exports.addCustomer = addCustomer;
 exports.showDetails=showDetails;
