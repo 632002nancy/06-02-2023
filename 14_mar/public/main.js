@@ -74,7 +74,7 @@ const allDetails = async (p) => {
   console.log(data);
 
   for (let i = 0; i < data.length; i++) {
-    document.getElementById("allCustDetail").innerHTML += ` Customer Name:${data[i].customerName}   &nbsp;&nbsp; Phone Number: ${data[i].phoneNumber}&nbsp;&nbsp; Table Number: ${data[i].tableNumber} &nbsp;&nbsp; Time Slot: ${data[i].timeSlot}` + '<br>'
+    document.getElementById("allCustDetail").innerHTML += ` Customer Name: ${data[i].customerName}   &nbsp;&nbsp; Phone Number: ${data[i].phoneNumber}&nbsp;&nbsp; Table Number: ${data[i].tableNumber} &nbsp;&nbsp; Time Slot: ${data[i].timeSlot}` + '<br>'
   }
 }
 

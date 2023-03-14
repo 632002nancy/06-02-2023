@@ -15,7 +15,7 @@ module.exports=(sequelize,DataTypes)=>{
             allowNull: false,
         },
         phoneNumber:{
-            type:DataTypes.BIGINT(11),
+            type:DataTypes.BIGINT(11),   //to work with big integers
             allowNull: false,
         },
     })
