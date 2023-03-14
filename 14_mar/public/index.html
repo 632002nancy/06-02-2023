@@ -28,7 +28,7 @@
             <form action="/addCustomer" method="post">
                 <input type="text" class="design" id="membersName" name="customerName" placeholder="Enter your name"
                     required>
-                <input type="text" class="design" id="phno" name="phoneNumber" placeholder="Phone Number">
+                <input type="number" class="design" id="phno" name="phoneNumber" placeholder="Phone Number">
 
                 <select name="timeSlot" id="timeSlot" class="design" onchange="newBooking(this);">
                     <option value="empty"></option>
@@ -62,7 +62,7 @@
         </div>
 <!-- --------------------------delete-------------------------- -->
         <form action="/deleteCustomer" method="post">
-            <input type="text" class="design" name="phoneNumber" placeholder="Phone Number">
+            <input type="number" class="design" name="phoneNumber" placeholder="Phone Number">
             <button type="submit" style="margin-top: 2rem;" class="design">Cancel Booking</button>
         </form>
 

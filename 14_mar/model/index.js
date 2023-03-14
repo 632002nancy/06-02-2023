@@ -42,7 +42,7 @@ db.sequelize = sequelize
 
 db.customers=require('./restaurant-model.js')(sequelize,DataTypes);
 
-db.sequelize.sync({ force: false })  //it sync our model with databse , without it the data will be recreated everytime we run the api and we will loose all old information so we use force:false also it will creates the table if the table doesnt exists
+db.sequelize.sync({ alter:true})  //it sync our model with databse , without it the data will be recreated everytime we run the api and we will loose all old information so we use force:false also it will creates the table if the table doesnt exists
     .then(() => {
         console.log("yes sync-done")
     })

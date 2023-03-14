@@ -15,7 +15,7 @@ module.exports=(sequelize,DataTypes)=>{
             allowNull: false,
         },
         phoneNumber:{
-            type:DataTypes.STRING,
+            type:DataTypes.BIGINT(11),
             allowNull: false,
         },
     })
