@@ -9,7 +9,7 @@ const studentSchema=mongoose.Schema({
         require:true,
     },
     class:{
-        type:Number,
+        type:String,
         require:true,
     },
     subjects:{
@@ -17,7 +17,7 @@ const studentSchema=mongoose.Schema({
         require:true,
     },
     image:{
-        data:String,
+        data:Buffer,
         contentType:String,
     }
 });
