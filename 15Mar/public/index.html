@@ -7,25 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student</title>
 </head>
+    <body>
 
-<body>
-    <!-- Note: the name property of input is used in the backend part in creating the student schema   -->
-    <div class="studentdetails">
-        <form action="/create" method="post" enctype="multipart/form-data"></form>>
-            <label>Full Name</label>
-            <input type="text" name="student_name" required>
-            <label>Roll No</label>
-            <input type="number" name="roll_no" required>
-            <label>Class/Section</label>
-            <input type="text" name="class_section" required>
-            <label>Subjects</label>
-            <input type="text" name="subjects" required>
-            <label>Choose Image</label>
-            <input type="file" name="image">  <!--name should be equal to schema name of image-->
-            <button type="submit">Submit</button>
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <label>Enter your Name:</label>
+            <input type="text" name="name" required>
+            <label>Enter your Roll No:</label>
+            <input type="number" name="rollNo" required>
+            <label>Enter your Class:</label>
+            <input type="text" name="class" required>
+            <label>Enter your Subjects:</label>
+            <input type="text" name="subject" required>
+            <label>Choose you Profile Picture:</label>
+            <input type="file" name="image" required><!--name should be equal to schema name of image-->
+            <button type="submit">SUBMIT</button>
         </form>
-    </div>
 
+        
     <div class="getdetails">
         <form action="/display" method="get">
             <button>See All Students</button>
@@ -36,11 +34,11 @@
         <form action="/updateData" method="post">
             <h4>Update details</h4>
             <label>Full Name</label>
-            <input type="text" name="student_name" required>
+            <input type="text" name="name" required>
             <label>Roll No</label>
-            <input type="number" name="roll_no" required>
-            <label>Class/Section</label>
-            <input type="text" name="class_section" required>
+            <input type="number" name="rollNo" required>
+            <label>Class</label>
+            <input type="text" name="class" required>
             <label>Subjects</label>
             <input type="text" name="subjects" required>
             <label>Choose Image</label>
@@ -57,6 +55,8 @@
             <button>Delete Student Data</button>
         </form>
     </div>
-</body>
 
+
+
+    </body>
 </html>
