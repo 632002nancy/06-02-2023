@@ -4,7 +4,7 @@ const path = require("path");
 
 
 const addData = async (req, res, next) => {
-
+  
     const data = {
         name: req.body.name,
         rollNo: req.body.rollNo,

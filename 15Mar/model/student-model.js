@@ -9,7 +9,7 @@ const studentSchema=mongoose.Schema({
         require:true,
     },
     class:{
-        type:String,
+        type:Number,
         require:true,
     },
     subjects:{
