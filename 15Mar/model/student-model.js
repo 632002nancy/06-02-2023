@@ -17,7 +17,7 @@ const studentSchema=mongoose.Schema({
         require:true,
     },
     image:{
-        data:String,  //store image data in the form of array 
+        data:String,  
         contentType:String,
     }
 });
