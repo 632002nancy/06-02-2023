@@ -3,10 +3,12 @@ const mongoose=require("mongoose")
 const path=require("path")
 const app=express();
 const router=require("./routes/student-routes.js")
+// const 
 
 app.use(express.json());
 
 app.use(express.static(path.join((__dirname,'public'))))
+app.use('/uploads',express.static('uploads'))
 app.use(express.urlencoded({extended:true}))
 
 app.use("/",router);

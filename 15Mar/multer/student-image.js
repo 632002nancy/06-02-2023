@@ -1,4 +1,5 @@
 //using multer as a middleware used for uploading files
+//multer-gridfs package is used when our data is greater than 16mb
 const multer = require("multer");
 
 // //storage for image
