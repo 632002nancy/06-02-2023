@@ -1,3 +1,5 @@
+//exports configuring parameters for MySQL connection & Sequelize
+//first 6 parameters are for SQL connection
 module.exports = {
     HOST: 'localhost',
     USER: 'sa',
@@ -6,6 +8,7 @@ module.exports = {
     DB: 'customer_db',
     dialect: 'mssql',
 
+    //optional used for sequelize pool connection
     pool: {
       max: 5,               // max number of connection in a pool
       min: 0,                // min number of connection in a pool

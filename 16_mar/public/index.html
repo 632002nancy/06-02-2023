@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="image.js" defer></script>
+    <title>Student</title>
+</head>
+    <body>
+
+        <form action="/create" method="post" enctype="multipart/form-data">
+            <label>Enter your Name:</label>
+            <input type="text" name="name" required>
+            <label>Enter your Roll No:</label>
+            <input type="number" name="rollNo" required>
+            <label>Enter your Class:</label>
+            <input type="text" name="class" required>
+            <label>Enter your Subjects:</label>
+            <input type="text" name="subjects" required>
+            <label>Choose you Profile Picture:</label>
+            <input type="file" name="image" required><!--name should be equal to schema name of image-->
+            <button type="submit">SUBMIT</button>
+        </form>
+
+        
+    <div class="getdetails">
+            <button onclick="showData()">See All Students</button>
+        </form>
+    </div>
+
+    <p id="displayData"></p>
+
+    <div class="updatedetails">
+        <form action="/update" method="post"  enctype="multipart/form-data">
+            <h4>Update details</h4>
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+            <label>Roll No</label>
+            <input type="number" name="rollNo" required>
+            <label>Class</label>
+            <input type="text" name="class" required>
+            <label>Subjects</label>
+            <input type="text" name="subjects" required>
+            <label>Choose Image</label>
+            <input type="file" id="myFile" name="image">
+            <button>Update Data</button>
+        </form>
+    </div>
+
+    <div class="getdetails">
+        <form action="/delete" method="post">
+            <br>
+            <h4>Delete data</h4>
+            <input type="number" name="rollNo" placeholder="Enter Roll No" required>
+            <button>Delete Student Data</button>
+        </form>
+    </div>
+
+
+
+    </body>
+</html>
