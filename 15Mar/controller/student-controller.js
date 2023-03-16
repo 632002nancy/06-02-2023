@@ -40,7 +40,7 @@ const addData = async (req, res, next) => {
 const getData = async (req, res, next) => {
     let data = await Student.find();
     res.status(200).json({ data })
-};
+};gfghvh
 
 //---------------------------------------update---------------------------------
 
