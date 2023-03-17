@@ -10,4 +10,3 @@ router.post("/", addUser);  // create and add anew user
 router.put("/:id",updateUser);  // defining the id for users to update users through the id
 router.delete("/:id",deleteUser); // deleting the user
 module.exports = router;
-

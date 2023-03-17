@@ -14,7 +14,8 @@ module.exports=(sequelize,DataTypes)=>{
             allowNull:false,
         },
         pic:{
-            type: DataTypes.STRING,
+            // type: DataTypes.BLOB("long"),  //BLOB(binary large objects)
+            type: DataTypes.STRING,  //BLOB(binary large objects)
         },
     })
     return studentSchema;

@@ -12,7 +12,7 @@ app.use("/",router);  // use creates a middleware for a path
 mongoose.connect(
     "mongodb+srv://nancyverma632002:pHpDe7egH2QgHmoC@cluster0.hijkfsw.mongodb.net/?retryWrites=true&w=majority"
 ).then(()=>
-    app.listen(3000,() => console.log("connected"))
+    app.listen(3000,() => console.log("connected to"))
 ).catch((err)=> 
     console.log("Got Error",err)
 );

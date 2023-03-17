@@ -20,9 +20,6 @@ const getAllUSers = async(req,res,next)=>{
 // Create User Operation on the database 
 const addUser = async(req,res,next) => {
     const { name , email, password } = req.body;
-    if(!name && name.trim() === "" && !email && email.trim() === "" &&  !password && password.trim() === "" && password.length<6){
-        return res.status(422).json({ message: "Invalid Data "})  // unproccessable entity
-    }
     let user;      // create a new user 
     try{
        user = new User({
@@ -34,9 +31,6 @@ const addUser = async(req,res,next) => {
     } catch(err){
         return next(err);
     } 
-    if(!user){
-        return res.status(500).json({message: "Unable to save data  "});  // internal server error 
-    }
     return  res.status(201).json({ user })    //something has been added
 };  
 
@@ -44,21 +38,12 @@ const addUser = async(req,res,next) => {
 const updateUser = async(req,res,next) => {
     const id = req.params.id;
     const { name,email,password } = req.body;
-    if(!name && name.trim() === "" && !email && email.trim() === "" &&  !password && password.trim() === "" && password.length<6){
-        return res.status(422).json({ message: "Invalid Data "})  // unproccessable entity
-    }
-
     let user;      // create a new user 
     try{ 
         user = await User.findByIdAndUpdate(id , { name , email , password });
     }catch(err){
         return next(err);
     }
-
-    if(!user){
-        return res.status(500).json({message:"unable to save user "})
-    }
-
     return res.status(200).json({message:"updated successfully"});
 }
 
@@ -71,9 +56,6 @@ const deleteUser = async(req,res,next) =>{
         user =await  User.findByIdAndDelete(id);
     }catch(err){
         return next(err);
-    }
-    if(!user){
-        return res.staus(500).json({message:"not found"})
     }
     return res.status(200).json({message:"User deleted"})
 }

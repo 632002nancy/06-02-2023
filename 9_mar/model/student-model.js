@@ -3,18 +3,18 @@ const mongoose = require("mongoose"); //to connect mongodb with express in less 
 let studentSchema = new mongoose.Schema({    //schema is used to describe the structure of data in mongo 
     student_name:{
         type:String,
-        required:true
+        required:true,
     },
     roll_no:{
         type:Number,
-        required:true
+        required:true,
     },
     class_section:{
         type:String,
-        required:true
+        required:true,
     },
     subjects:{
-        type:Array
+        type:Array,
     }
 });
 
