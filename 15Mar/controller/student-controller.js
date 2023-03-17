@@ -1,11 +1,10 @@
 const Student = require("../model/student-model.js")
 const fs = require("fs");
 const path = require("path");
-const { deleteOne } = require("../model/student-model.js");
-
 // ---------------------------------------------create-------------------------------------------
 const addData = async (req, res, next) => {
-    console.log(req.file.filename)
+    console.log(req.file.filename);
+  
     const data = {
         name: req.body.name,
         rollNo: req.body.rollNo,
@@ -16,7 +15,7 @@ const addData = async (req, res, next) => {
             contentType: req.file.mimetype, //mimeType will give the exact type of the file to the contenttype in mongo
         }
     }
-    console.log(data.image.contentType)
+    console.log(data.image.contentType);
     if (
         data.name?.trim() === "" &&
         isNaN(data.rollNo) &&
@@ -32,20 +31,30 @@ const addData = async (req, res, next) => {
         .catch(err => {
             return res.status(500).json({ message: err })
         })
-    console.log(data)
+    
 }
 
 
-// =----------------------------------------------------------read ------------------------------------------------
+// ----------------------------------------------------------read ------------------------------------------------
 const getData = async (req, res, next) => {
     let data = await Student.find();
-    res.status(200).json({ data })
+   return res.status(200).json({ data })
+}
+
+// ----------------------------to read data of single student ------------------------------------- 
+const takeData =async(req,res)=>{
+    let id= req.params.id;
+    console.log(id)
+    let data=await Student.findById(id);
+    console.log(data)
+    return res.status(200).json({data});
 }
 
 //---------------------------------------update---------------------------------
 
 const updateData = async (req, res, next) => {
     console.log(req.file.filename)
+    let id=req.params.id
     const data = {
         name: req.body.name,
         rollNo: req.body.rollNo,
@@ -57,7 +66,7 @@ const updateData = async (req, res, next) => {
         }
     }
 
-    await Student.findOneAndUpdate({ rollNo: data.rollNo }, { name: data.name, class: data.class, subjects: data.subjects, rollNo: data.rollNo, image: data.image })
+    await Student.findOneAndUpdate(id, { name: data.name, class: data.class, subjects: data.subjects, rollNo: data.rollNo, image: data.image })
         .then(data => {
             return res.status(200).json({ message: "Successfully saved and Updated" });
         })
@@ -82,6 +91,7 @@ const deleteData = async (req, res) => {
 //exporting api
 exports.addData = addData;
 exports.getData = getData;
+exports.takeData = takeData;
 exports.updateData = updateData;
 exports.deleteData = deleteData;
 
