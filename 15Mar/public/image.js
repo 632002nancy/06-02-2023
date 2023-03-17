@@ -1,7 +1,7 @@
 //submitting information
 const submitInfo=async(p)=>{
     document.getElementById("studentCreated").style.display="";
-    let url="http://localhost:3030/create"
+    let url="http://localhost:3030/create";
     let response = await fetch(url);
     let {data} = await response.json();
   
