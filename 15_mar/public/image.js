@@ -7,19 +7,20 @@ let button = document.createElement("button");
 const submitInfo = async () => {
   document.getElementById("studentCreated").style.display = "block";
   document.getElementById("studentCreated").innerHTML = "Data is SAVED successfully";
-  
+  return;
 };
 //updating information and displaying in html
 const updateInfo = async () => {
   document.getElementById("studentCreated").style.display = "block";
   document.getElementById("studentCreated").innerHTML = "Data is saved and UPDATED successfully";
+  return;
   
 };
 //deleting information and displaying in html
 const deleteInfo = async () => {
   document.getElementById("studentCreated").style.display = "block";
   document.getElementById("studentCreated").innerHTML = "Data is DELETED successfully";
-  
+  return;
 };
 
 // making the show data function

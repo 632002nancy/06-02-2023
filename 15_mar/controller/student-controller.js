@@ -70,7 +70,7 @@ const updateData = async (req, res, next) => {
             contentType: req.file.mimetype, //mimeType will give the exact type of the file to the contenttype in mongo
         }
     }
-    await Student.findOneAndUpdate({rollNo: data.rollNo}, { name: data.name, class: data.class, subjects: data.subjects, rollNo: data.rollNo, image: data.image })
+    await Student.findOneAndUpdate({rollNo: data.rollNo}, { name: data.name, class: data.class, subjects: data.subjects, image: data.image })
         .then(data => {
             console.log(data)
             return res.status(200);
