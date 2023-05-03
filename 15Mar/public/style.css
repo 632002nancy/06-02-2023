@@ -1,0 +1,43 @@
+body{
+    background:url('https://i.pinimg.com/originals/3a/ac/74/3aac747a8aa53707fe2d6e2d0af91e57.jpg')no-repeat center center/cover;
+    height: 100vh;
+}
+#welcome{
+    text-align: center;
+    margin: 4rem;
+    margin-left: -8px;
+    margin-right: -8px;
+    color:white;
+    padding: 0.8rem;
+    background-color: rgb(240, 223, 205);    
+}
+
+#createstudent{
+    padding: 4rem;
+}
+
+#createstudent input{
+    border-radius: 0.6rem;
+    padding: 0.1rem;
+    box-shadow: 1px 1px 3px 2px rgb(162, 219, 240);
+}
+
+#createstudent label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#function{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    color: white;
+    background-color: rgb(165, 127, 78);
+    border-radius: 1rem;
+    padding: 0.4rem;
+}
