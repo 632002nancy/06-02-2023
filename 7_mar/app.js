@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/user-routes");
+var cors = require('cors');
 const app =express();
 
 app.use(express.json()); // accept the data which is converted to json format 
-
+app.use(cors()) ;
 // callling the route module which contains the controller and user model 
 app.use("/",router);  // use creates a middleware for a path
 
